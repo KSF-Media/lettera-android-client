@@ -50,7 +50,7 @@ public class ImageInfo {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getCaption() {
     return caption;
   }
