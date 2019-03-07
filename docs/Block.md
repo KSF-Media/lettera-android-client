@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **instagramEmbed** | **String** |  |  [optional]
 **infogramEmbed** | **List&lt;Object&gt;** |  |  [optional]
 **twitterEmbed** | **String** |  |  [optional]
+**facebookEmbed** | **String** |  |  [optional]
 
 
 

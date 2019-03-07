@@ -37,6 +37,8 @@ public class Block {
   private List<Object> infogramEmbed = null;
   @SerializedName("twitterEmbed")
   private String twitterEmbed = null;
+  @SerializedName("facebookEmbed")
+  private String facebookEmbed = null;
 
   /**
    **/
@@ -118,6 +120,16 @@ public class Block {
     this.twitterEmbed = twitterEmbed;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getFacebookEmbed() {
+    return facebookEmbed;
+  }
+  public void setFacebookEmbed(String facebookEmbed) {
+    this.facebookEmbed = facebookEmbed;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -135,7 +147,8 @@ public class Block {
         (this.shortcodeError == null ? block.shortcodeError == null : this.shortcodeError.equals(block.shortcodeError)) &&
         (this.instagramEmbed == null ? block.instagramEmbed == null : this.instagramEmbed.equals(block.instagramEmbed)) &&
         (this.infogramEmbed == null ? block.infogramEmbed == null : this.infogramEmbed.equals(block.infogramEmbed)) &&
-        (this.twitterEmbed == null ? block.twitterEmbed == null : this.twitterEmbed.equals(block.twitterEmbed));
+        (this.twitterEmbed == null ? block.twitterEmbed == null : this.twitterEmbed.equals(block.twitterEmbed)) &&
+        (this.facebookEmbed == null ? block.facebookEmbed == null : this.facebookEmbed.equals(block.facebookEmbed));
   }
 
   @Override
@@ -149,6 +162,7 @@ public class Block {
     result = 31 * result + (this.instagramEmbed == null ? 0: this.instagramEmbed.hashCode());
     result = 31 * result + (this.infogramEmbed == null ? 0: this.infogramEmbed.hashCode());
     result = 31 * result + (this.twitterEmbed == null ? 0: this.twitterEmbed.hashCode());
+    result = 31 * result + (this.facebookEmbed == null ? 0: this.facebookEmbed.hashCode());
     return result;
   }
 
@@ -165,6 +179,7 @@ public class Block {
     sb.append("  instagramEmbed: ").append(instagramEmbed).append("\n");
     sb.append("  infogramEmbed: ").append(infogramEmbed).append("\n");
     sb.append("  twitterEmbed: ").append(twitterEmbed).append("\n");
+    sb.append("  facebookEmbed: ").append(facebookEmbed).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
