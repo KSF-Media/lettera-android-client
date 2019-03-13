@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listGet"></a>
 # **listGet**
-> List&lt;Article&gt; listGet()
+> List&lt;ListArticle&gt; listGet()
 
 
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ListsApi apiInstance = new ListsApi();
 try {
-    List<Article> result = apiInstance.listGet();
+    List<ListArticle> result = apiInstance.listGet();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#listGet");
@@ -33,7 +33,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;Article&gt;**](Article.md)
+[**List&lt;ListArticle&gt;**](ListArticle.md)
 
 ### Authorization
 

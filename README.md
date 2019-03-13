@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [Block](docs/Block.md)
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
  - [ImageInfo](docs/ImageInfo.md)
+ - [ListArticle](docs/ListArticle.md)
 
 
 ## Documentation for Authorization
