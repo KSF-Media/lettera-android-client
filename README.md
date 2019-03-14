@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
  - [Author](docs/Author.md)
  - [Block](docs/Block.md)
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
+ - [FactInfo](docs/FactInfo.md)
  - [ImageInfo](docs/ImageInfo.md)
  - [ListArticle](docs/ListArticle.md)
 
