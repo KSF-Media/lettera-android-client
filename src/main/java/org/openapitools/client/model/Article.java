@@ -41,6 +41,8 @@ public class Article {
   private Boolean premium = null;
   @SerializedName("publishingTime")
   private String publishingTime = null;
+  @SerializedName("externalScripts")
+  private List<String> externalScripts = null;
 
   /**
    **/
@@ -132,6 +134,16 @@ public class Article {
     this.publishingTime = publishingTime;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public List<String> getExternalScripts() {
+    return externalScripts;
+  }
+  public void setExternalScripts(List<String> externalScripts) {
+    this.externalScripts = externalScripts;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -150,7 +162,8 @@ public class Article {
         (this.mainImage == null ? article.mainImage == null : this.mainImage.equals(article.mainImage)) &&
         (this.body == null ? article.body == null : this.body.equals(article.body)) &&
         (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
-        (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime));
+        (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
+        (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts));
   }
 
   @Override
@@ -165,6 +178,7 @@ public class Article {
     result = 31 * result + (this.body == null ? 0: this.body.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
+    result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     return result;
   }
 
@@ -182,6 +196,7 @@ public class Article {
     sb.append("  body: ").append(body).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
+    sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

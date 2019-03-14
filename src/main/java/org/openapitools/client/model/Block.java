@@ -34,6 +34,8 @@ public class Block {
   private String headline = null;
   @SerializedName("shortcodeError")
   private BlockShortcodeError shortcodeError = null;
+  @SerializedName("embed")
+  private List<Object> embed = null;
   @SerializedName("instagramEmbed")
   private String instagramEmbed = null;
   @SerializedName("infogramEmbed")
@@ -106,6 +108,16 @@ public class Block {
   /**
    **/
   @ApiModelProperty(value = "")
+  public List<Object> getEmbed() {
+    return embed;
+  }
+  public void setEmbed(List<Object> embed) {
+    this.embed = embed;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public String getInstagramEmbed() {
     return instagramEmbed;
   }
@@ -159,6 +171,7 @@ public class Block {
         (this.factBox == null ? block.factBox == null : this.factBox.equals(block.factBox)) &&
         (this.headline == null ? block.headline == null : this.headline.equals(block.headline)) &&
         (this.shortcodeError == null ? block.shortcodeError == null : this.shortcodeError.equals(block.shortcodeError)) &&
+        (this.embed == null ? block.embed == null : this.embed.equals(block.embed)) &&
         (this.instagramEmbed == null ? block.instagramEmbed == null : this.instagramEmbed.equals(block.instagramEmbed)) &&
         (this.infogramEmbed == null ? block.infogramEmbed == null : this.infogramEmbed.equals(block.infogramEmbed)) &&
         (this.twitterEmbed == null ? block.twitterEmbed == null : this.twitterEmbed.equals(block.twitterEmbed)) &&
@@ -174,6 +187,7 @@ public class Block {
     result = 31 * result + (this.factBox == null ? 0: this.factBox.hashCode());
     result = 31 * result + (this.headline == null ? 0: this.headline.hashCode());
     result = 31 * result + (this.shortcodeError == null ? 0: this.shortcodeError.hashCode());
+    result = 31 * result + (this.embed == null ? 0: this.embed.hashCode());
     result = 31 * result + (this.instagramEmbed == null ? 0: this.instagramEmbed.hashCode());
     result = 31 * result + (this.infogramEmbed == null ? 0: this.infogramEmbed.hashCode());
     result = 31 * result + (this.twitterEmbed == null ? 0: this.twitterEmbed.hashCode());
@@ -192,6 +206,7 @@ public class Block {
     sb.append("  factBox: ").append(factBox).append("\n");
     sb.append("  headline: ").append(headline).append("\n");
     sb.append("  shortcodeError: ").append(shortcodeError).append("\n");
+    sb.append("  embed: ").append(embed).append("\n");
     sb.append("  instagramEmbed: ").append(instagramEmbed).append("\n");
     sb.append("  infogramEmbed: ").append(infogramEmbed).append("\n");
     sb.append("  twitterEmbed: ").append(twitterEmbed).append("\n");
