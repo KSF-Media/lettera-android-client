@@ -19,29 +19,29 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class FactInfo {
   
-  @SerializedName("factTitle")
-  private String factTitle = null;
-  @SerializedName("factContent")
-  private List<String> factContent = null;
+  @SerializedName("title")
+  private String title = null;
+  @SerializedName("content")
+  private List<String> content = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getFactTitle() {
-    return factTitle;
+  public String getTitle() {
+    return title;
   }
-  public void setFactTitle(String factTitle) {
-    this.factTitle = factTitle;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<String> getFactContent() {
-    return factContent;
+  public List<String> getContent() {
+    return content;
   }
-  public void setFactContent(List<String> factContent) {
-    this.factContent = factContent;
+  public void setContent(List<String> content) {
+    this.content = content;
   }
 
 
@@ -54,15 +54,15 @@ public class FactInfo {
       return false;
     }
     FactInfo factInfo = (FactInfo) o;
-    return (this.factTitle == null ? factInfo.factTitle == null : this.factTitle.equals(factInfo.factTitle)) &&
-        (this.factContent == null ? factInfo.factContent == null : this.factContent.equals(factInfo.factContent));
+    return (this.title == null ? factInfo.title == null : this.title.equals(factInfo.title)) &&
+        (this.content == null ? factInfo.content == null : this.content.equals(factInfo.content));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.factTitle == null ? 0: this.factTitle.hashCode());
-    result = 31 * result + (this.factContent == null ? 0: this.factContent.hashCode());
+    result = 31 * result + (this.title == null ? 0: this.title.hashCode());
+    result = 31 * result + (this.content == null ? 0: this.content.hashCode());
     return result;
   }
 
@@ -71,8 +71,8 @@ public class FactInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class FactInfo {\n");
     
-    sb.append("  factTitle: ").append(factTitle).append("\n");
-    sb.append("  factContent: ").append(factContent).append("\n");
+    sb.append("  title: ").append(title).append("\n");
+    sb.append("  content: ").append(content).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
