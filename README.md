@@ -65,8 +65,9 @@ public class ArticlesApiExample {
     public static void main(String[] args) {
         ArticlesApi apiInstance = new ArticlesApi();
         UUID uuid = null; // UUID | 
+        String authorization = null; // String | 
         try {
-            Article result = apiInstance.articleUuidGet(uuid);
+            Article result = apiInstance.articleUuidGet(uuid, authorization);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ArticlesApi#articleUuidGet");
