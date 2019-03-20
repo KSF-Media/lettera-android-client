@@ -85,10 +85,6 @@ public class JsonUtil {
       return new TypeToken<List<ImageInfo>>(){}.getType();
     }
     
-    if ("ListArticle".equalsIgnoreCase(className)) {
-      return new TypeToken<List<ListArticle>>(){}.getType();
-    }
-    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
@@ -121,10 +117,6 @@ public class JsonUtil {
     
     if ("ImageInfo".equalsIgnoreCase(className)) {
       return new TypeToken<ImageInfo>(){}.getType();
-    }
-    
-    if ("ListArticle".equalsIgnoreCase(className)) {
-      return new TypeToken<ListArticle>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

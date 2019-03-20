@@ -23,7 +23,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.ListArticle;
+import org.openapitools.client.model.Article;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -58,9 +58,9 @@ public class ListsApi {
   /**
   * 
   * 
-   * @return List<ListArticle>
+   * @return List<Article>
   */
-  public List<ListArticle> listGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Article> listGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -90,7 +90,7 @@ public class ListsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<ListArticle>) ApiInvoker.deserialize(localVarResponse, "array", ListArticle.class);
+         return (List<Article>) ApiInvoker.deserialize(localVarResponse, "array", Article.class);
       } else {
          return null;
       }
@@ -116,7 +116,7 @@ public class ListsApi {
    * 
 
   */
-  public void listGet (final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
+  public void listGet (final Response.Listener<List<Article>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -156,7 +156,7 @@ public class ListsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<ListArticle>) ApiInvoker.deserialize(localVarResponse,  "array", ListArticle.class));
+              responseListener.onResponse((List<Article>) ApiInvoker.deserialize(localVarResponse,  "array", Article.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
