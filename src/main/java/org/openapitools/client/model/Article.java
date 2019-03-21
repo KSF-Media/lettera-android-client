@@ -43,6 +43,8 @@ public class Article {
   private String publishingTime = null;
   @SerializedName("externalScripts")
   private List<String> externalScripts = null;
+  @SerializedName("relatedArticles")
+  private List<String> relatedArticles = null;
 
   /**
    **/
@@ -144,6 +146,16 @@ public class Article {
     this.externalScripts = externalScripts;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public List<String> getRelatedArticles() {
+    return relatedArticles;
+  }
+  public void setRelatedArticles(List<String> relatedArticles) {
+    this.relatedArticles = relatedArticles;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -163,7 +175,8 @@ public class Article {
         (this.body == null ? article.body == null : this.body.equals(article.body)) &&
         (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
         (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
-        (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts));
+        (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
+        (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles));
   }
 
   @Override
@@ -179,6 +192,7 @@ public class Article {
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
+    result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     return result;
   }
 
@@ -197,6 +211,7 @@ public class Article {
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  externalScripts: ").append(externalScripts).append("\n");
+    sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

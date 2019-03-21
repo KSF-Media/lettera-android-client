@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **premium** | **Boolean** |  | 
 **publishingTime** | **String** |  | 
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
+**relatedArticles** | **List&lt;String&gt;** |  |  [optional]
 
 
 
