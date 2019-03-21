@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="articleUuidGet"></a>
 # **articleUuidGet**
-> Article articleUuidGet(uuid, authorization)
+> Article articleUuidGet(uuid, authUser, authorization)
 
 
 
@@ -20,9 +20,10 @@ Method | HTTP request | Description
 
 ArticlesApi apiInstance = new ArticlesApi();
 UUID uuid = null; // UUID | 
+UUID authUser = null; // UUID | 
 String authorization = null; // String | 
 try {
-    Article result = apiInstance.articleUuidGet(uuid, authorization);
+    Article result = apiInstance.articleUuidGet(uuid, authUser, authorization);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArticlesApi#articleUuidGet");
@@ -35,6 +36,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
+ **authUser** | [**UUID**](.md)|  | [optional] [default to null]
  **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
