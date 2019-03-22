@@ -4,8 +4,52 @@ All URIs are relative to *http://http:/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**articleSearchGet**](ArticlesApi.md#articleSearchGet) | **GET** /article/search | 
 [**articleUuidGet**](ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
 
+
+<a name="articleSearchGet"></a>
+# **articleSearchGet**
+> List&lt;Article&gt; articleSearchGet(contentQuery)
+
+
+
+Search article by content. It&#39;s a freetext search, so the &#x60;contentQuery&#x60; may be whatever string or sentence to search for.
+
+### Example
+```java
+// Import classes:
+//import org.openapitools.client.api.ArticlesApi;
+
+ArticlesApi apiInstance = new ArticlesApi();
+String contentQuery = null; // String | 
+try {
+    List<Article> result = apiInstance.articleSearchGet(contentQuery);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ArticlesApi#articleSearchGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contentQuery** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**List&lt;Article&gt;**](Article.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json;charset=utf-8
 
 <a name="articleUuidGet"></a>
 # **articleUuidGet**

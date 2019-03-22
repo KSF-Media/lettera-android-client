@@ -64,14 +64,12 @@ public class ArticlesApiExample {
 
     public static void main(String[] args) {
         ArticlesApi apiInstance = new ArticlesApi();
-        UUID uuid = null; // UUID | 
-        UUID authUser = null; // UUID | 
-        String authorization = null; // String | 
+        String contentQuery = null; // String | 
         try {
-            Article result = apiInstance.articleUuidGet(uuid, authUser, authorization);
+            List<Article> result = apiInstance.articleSearchGet(contentQuery);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ArticlesApi#articleUuidGet");
+            System.err.println("Exception when calling ArticlesApi#articleSearchGet");
             e.printStackTrace();
         }
     }
@@ -85,6 +83,7 @@ All URIs are relative to *http://http:/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ArticlesApi* | [**articleSearchGet**](docs/ArticlesApi.md#articleSearchGet) | **GET** /article/search | 
 *ArticlesApi* | [**articleUuidGet**](docs/ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
 *ListsApi* | [**listGet**](docs/ListsApi.md#listGet) | **GET** /list | 
 
