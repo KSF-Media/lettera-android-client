@@ -41,6 +41,8 @@ public class Article {
   private Boolean premium = null;
   @SerializedName("publishingTime")
   private String publishingTime = null;
+  @SerializedName("updateTime")
+  private String updateTime = null;
   @SerializedName("externalScripts")
   private List<String> externalScripts = null;
   @SerializedName("relatedArticles")
@@ -139,6 +141,16 @@ public class Article {
   /**
    **/
   @ApiModelProperty(value = "")
+  public String getUpdateTime() {
+    return updateTime;
+  }
+  public void setUpdateTime(String updateTime) {
+    this.updateTime = updateTime;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public List<String> getExternalScripts() {
     return externalScripts;
   }
@@ -175,6 +187,7 @@ public class Article {
         (this.body == null ? article.body == null : this.body.equals(article.body)) &&
         (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
         (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
+        (this.updateTime == null ? article.updateTime == null : this.updateTime.equals(article.updateTime)) &&
         (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles));
   }
@@ -191,6 +204,7 @@ public class Article {
     result = 31 * result + (this.body == null ? 0: this.body.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
+    result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
     result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     return result;
@@ -210,6 +224,7 @@ public class Article {
     sb.append("  body: ").append(body).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
+    sb.append("  updateTime: ").append(updateTime).append("\n");
     sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("}\n");

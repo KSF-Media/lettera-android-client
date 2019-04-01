@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **body** | [**List&lt;Block&gt;**](Block.md) |  | 
 **premium** | **Boolean** |  | 
 **publishingTime** | **String** |  | 
+**updateTime** | **String** |  |  [optional]
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
 **relatedArticles** | **List&lt;String&gt;** |  |  [optional]
 
