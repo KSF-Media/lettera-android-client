@@ -27,6 +27,8 @@ public class ImageInfo {
   private String caption = null;
   @SerializedName("alignment")
   private Alignment alignment = null;
+  @SerializedName("byline")
+  private String byline = null;
 
   /**
    **/
@@ -68,6 +70,16 @@ public class ImageInfo {
     this.alignment = alignment;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getByline() {
+    return byline;
+  }
+  public void setByline(String byline) {
+    this.byline = byline;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -81,7 +93,8 @@ public class ImageInfo {
     return (this.url == null ? imageInfo.url == null : this.url.equals(imageInfo.url)) &&
         (this.thumb == null ? imageInfo.thumb == null : this.thumb.equals(imageInfo.thumb)) &&
         (this.caption == null ? imageInfo.caption == null : this.caption.equals(imageInfo.caption)) &&
-        (this.alignment == null ? imageInfo.alignment == null : this.alignment.equals(imageInfo.alignment));
+        (this.alignment == null ? imageInfo.alignment == null : this.alignment.equals(imageInfo.alignment)) &&
+        (this.byline == null ? imageInfo.byline == null : this.byline.equals(imageInfo.byline));
   }
 
   @Override
@@ -91,6 +104,7 @@ public class ImageInfo {
     result = 31 * result + (this.thumb == null ? 0: this.thumb.hashCode());
     result = 31 * result + (this.caption == null ? 0: this.caption.hashCode());
     result = 31 * result + (this.alignment == null ? 0: this.alignment.hashCode());
+    result = 31 * result + (this.byline == null ? 0: this.byline.hashCode());
     return result;
   }
 
@@ -103,6 +117,7 @@ public class ImageInfo {
     sb.append("  thumb: ").append(thumb).append("\n");
     sb.append("  caption: ").append(caption).append("\n");
     sb.append("  alignment: ").append(alignment).append("\n");
+    sb.append("  byline: ").append(byline).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

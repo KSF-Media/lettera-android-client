@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **thumb** | **String** |  | 
 **caption** | **String** |  |  [optional]
 **alignment** | [**Alignment**](Alignment.md) |  |  [optional]
+**byline** | **String** |  |  [optional]
 
 
 
