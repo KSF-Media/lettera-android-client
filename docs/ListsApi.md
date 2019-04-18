@@ -7,13 +7,15 @@ Method | HTTP request | Description
 [**listGet**](ListsApi.md#listGet) | **GET** /list | 
 
 
-<a name="listGet"></a>
-# **listGet**
+
+## listGet
+
 > List&lt;Article&gt; listGet()
 
 
 
 ### Example
+
 ```java
 // Import classes:
 //import org.openapitools.client.api.ListsApi;
@@ -29,6 +31,7 @@ try {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -41,6 +44,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json;charset=utf-8
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
 

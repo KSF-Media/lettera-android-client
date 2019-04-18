@@ -1,7 +1,9 @@
 
+
 # Article
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | [**UUID**](UUID.md) |  | 
@@ -16,6 +18,7 @@ Name | Type | Description | Notes
 **updateTime** | **String** |  |  [optional]
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
 **relatedArticles** | **List&lt;String&gt;** |  |  [optional]
+
 
 
 
