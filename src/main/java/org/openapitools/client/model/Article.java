@@ -14,7 +14,6 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
-import org.openapitools.client.model.Author;
 import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
@@ -27,8 +26,8 @@ public class Article {
   private UUID uuid = null;
   @SerializedName("title")
   private String title = null;
-  @SerializedName("author")
-  private Author author = null;
+  @SerializedName("authorByline")
+  private String authorByline = null;
   @SerializedName("tags")
   private List<String> tags = null;
   @SerializedName("preamble")
@@ -70,12 +69,12 @@ public class Article {
 
   /**
    **/
-  @ApiModelProperty(required = true, value = "")
-  public Author getAuthor() {
-    return author;
+  @ApiModelProperty(value = "")
+  public String getAuthorByline() {
+    return authorByline;
   }
-  public void setAuthor(Author author) {
-    this.author = author;
+  public void setAuthorByline(String authorByline) {
+    this.authorByline = authorByline;
   }
 
   /**
@@ -180,7 +179,7 @@ public class Article {
     Article article = (Article) o;
     return (this.uuid == null ? article.uuid == null : this.uuid.equals(article.uuid)) &&
         (this.title == null ? article.title == null : this.title.equals(article.title)) &&
-        (this.author == null ? article.author == null : this.author.equals(article.author)) &&
+        (this.authorByline == null ? article.authorByline == null : this.authorByline.equals(article.authorByline)) &&
         (this.tags == null ? article.tags == null : this.tags.equals(article.tags)) &&
         (this.preamble == null ? article.preamble == null : this.preamble.equals(article.preamble)) &&
         (this.mainImage == null ? article.mainImage == null : this.mainImage.equals(article.mainImage)) &&
@@ -197,7 +196,7 @@ public class Article {
     int result = 17;
     result = 31 * result + (this.uuid == null ? 0: this.uuid.hashCode());
     result = 31 * result + (this.title == null ? 0: this.title.hashCode());
-    result = 31 * result + (this.author == null ? 0: this.author.hashCode());
+    result = 31 * result + (this.authorByline == null ? 0: this.authorByline.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
     result = 31 * result + (this.mainImage == null ? 0: this.mainImage.hashCode());
@@ -217,7 +216,7 @@ public class Article {
     
     sb.append("  uuid: ").append(uuid).append("\n");
     sb.append("  title: ").append(title).append("\n");
-    sb.append("  author: ").append(author).append("\n");
+    sb.append("  authorByline: ").append(authorByline).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
     sb.append("  mainImage: ").append(mainImage).append("\n");

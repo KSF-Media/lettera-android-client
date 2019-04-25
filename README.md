@@ -92,7 +92,6 @@ Class | Method | HTTP request | Description
 
  - [Alignment](docs/Alignment.md)
  - [Article](docs/Article.md)
- - [Author](docs/Author.md)
  - [Block](docs/Block.md)
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
  - [FactInfo](docs/FactInfo.md)
