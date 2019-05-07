@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | [**UUID**](UUID.md) |  | 
 **title** | **String** |  | 
-**authorByline** | **String** |  |  [optional]
+**authorBylines** | **List&lt;String&gt;** |  |  [optional]
 **tags** | **List&lt;String&gt;** |  | 
 **preamble** | **String** |  |  [optional]
 **mainImage** | [**ImageInfo**](ImageInfo.md) |  |  [optional]

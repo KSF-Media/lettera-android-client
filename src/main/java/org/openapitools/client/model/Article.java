@@ -26,8 +26,8 @@ public class Article {
   private UUID uuid = null;
   @SerializedName("title")
   private String title = null;
-  @SerializedName("authorByline")
-  private String authorByline = null;
+  @SerializedName("authorBylines")
+  private List<String> authorBylines = null;
   @SerializedName("tags")
   private List<String> tags = null;
   @SerializedName("preamble")
@@ -70,11 +70,11 @@ public class Article {
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getAuthorByline() {
-    return authorByline;
+  public List<String> getAuthorBylines() {
+    return authorBylines;
   }
-  public void setAuthorByline(String authorByline) {
-    this.authorByline = authorByline;
+  public void setAuthorBylines(List<String> authorBylines) {
+    this.authorBylines = authorBylines;
   }
 
   /**
@@ -179,7 +179,7 @@ public class Article {
     Article article = (Article) o;
     return (this.uuid == null ? article.uuid == null : this.uuid.equals(article.uuid)) &&
         (this.title == null ? article.title == null : this.title.equals(article.title)) &&
-        (this.authorByline == null ? article.authorByline == null : this.authorByline.equals(article.authorByline)) &&
+        (this.authorBylines == null ? article.authorBylines == null : this.authorBylines.equals(article.authorBylines)) &&
         (this.tags == null ? article.tags == null : this.tags.equals(article.tags)) &&
         (this.preamble == null ? article.preamble == null : this.preamble.equals(article.preamble)) &&
         (this.mainImage == null ? article.mainImage == null : this.mainImage.equals(article.mainImage)) &&
@@ -196,7 +196,7 @@ public class Article {
     int result = 17;
     result = 31 * result + (this.uuid == null ? 0: this.uuid.hashCode());
     result = 31 * result + (this.title == null ? 0: this.title.hashCode());
-    result = 31 * result + (this.authorByline == null ? 0: this.authorByline.hashCode());
+    result = 31 * result + (this.authorBylines == null ? 0: this.authorBylines.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
     result = 31 * result + (this.mainImage == null ? 0: this.mainImage.hashCode());
@@ -216,7 +216,7 @@ public class Article {
     
     sb.append("  uuid: ").append(uuid).append("\n");
     sb.append("  title: ").append(title).append("\n");
-    sb.append("  authorByline: ").append(authorByline).append("\n");
+    sb.append("  authorBylines: ").append(authorBylines).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
     sb.append("  mainImage: ").append(mainImage).append("\n");
