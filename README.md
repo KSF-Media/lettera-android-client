@@ -85,7 +85,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ArticlesApi* | [**articleSearchGet**](docs/ArticlesApi.md#articleSearchGet) | **GET** /article/search | 
 *ArticlesApi* | [**articleUuidGet**](docs/ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
-*ListsApi* | [**listGet**](docs/ListsApi.md#listGet) | **GET** /list | 
+*ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
+*ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
 
 
 ## Documentation for Models
