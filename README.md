@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 *ArticlesApi* | [**articleUuidGet**](docs/ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
 *ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
 *ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
+*ListsApi* | [**mostreadGet**](docs/ListsApi.md#mostreadGet) | **GET** /mostread | Returns a list of most read articles
 
 
 ## Documentation for Models
