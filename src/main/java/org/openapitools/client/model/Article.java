@@ -14,6 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
+import org.openapitools.client.model.ArticleType;
 import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
@@ -42,6 +43,8 @@ public class Article {
   private String publishingTime = null;
   @SerializedName("updateTime")
   private String updateTime = null;
+  @SerializedName("articleType")
+  private ArticleType articleType = null;
   @SerializedName("externalScripts")
   private List<String> externalScripts = null;
   @SerializedName("relatedArticles")
@@ -149,6 +152,16 @@ public class Article {
 
   /**
    **/
+  @ApiModelProperty(required = true, value = "")
+  public ArticleType getArticleType() {
+    return articleType;
+  }
+  public void setArticleType(ArticleType articleType) {
+    this.articleType = articleType;
+  }
+
+  /**
+   **/
   @ApiModelProperty(value = "")
   public List<String> getExternalScripts() {
     return externalScripts;
@@ -187,6 +200,7 @@ public class Article {
         (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
         (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
         (this.updateTime == null ? article.updateTime == null : this.updateTime.equals(article.updateTime)) &&
+        (this.articleType == null ? article.articleType == null : this.articleType.equals(article.articleType)) &&
         (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles));
   }
@@ -204,6 +218,7 @@ public class Article {
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
+    result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
     result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     return result;
@@ -224,6 +239,7 @@ public class Article {
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  updateTime: ").append(updateTime).append("\n");
+    sb.append("  articleType: ").append(articleType).append("\n");
     sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("}\n");
