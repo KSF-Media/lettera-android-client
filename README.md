@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [Alignment](docs/Alignment.md)
  - [Article](docs/Article.md)
  - [ArticleType](docs/ArticleType.md)
+ - [Author](docs/Author.md)
  - [Block](docs/Block.md)
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
  - [FactInfo](docs/FactInfo.md)
