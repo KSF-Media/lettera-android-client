@@ -36,6 +36,8 @@ public class Article {
   private String preamble = null;
   @SerializedName("mainImage")
   private ImageInfo mainImage = null;
+  @SerializedName("listImage")
+  private ImageInfo listImage = null;
   @SerializedName("body")
   private List<Block> body = null;
   @SerializedName("premium")
@@ -109,6 +111,16 @@ public class Article {
   }
   public void setMainImage(ImageInfo mainImage) {
     this.mainImage = mainImage;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public ImageInfo getListImage() {
+    return listImage;
+  }
+  public void setListImage(ImageInfo listImage) {
+    this.listImage = listImage;
   }
 
   /**
@@ -197,6 +209,7 @@ public class Article {
         (this.tags == null ? article.tags == null : this.tags.equals(article.tags)) &&
         (this.preamble == null ? article.preamble == null : this.preamble.equals(article.preamble)) &&
         (this.mainImage == null ? article.mainImage == null : this.mainImage.equals(article.mainImage)) &&
+        (this.listImage == null ? article.listImage == null : this.listImage.equals(article.listImage)) &&
         (this.body == null ? article.body == null : this.body.equals(article.body)) &&
         (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
         (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
@@ -215,6 +228,7 @@ public class Article {
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
     result = 31 * result + (this.mainImage == null ? 0: this.mainImage.hashCode());
+    result = 31 * result + (this.listImage == null ? 0: this.listImage.hashCode());
     result = 31 * result + (this.body == null ? 0: this.body.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
@@ -236,6 +250,7 @@ public class Article {
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
     sb.append("  mainImage: ").append(mainImage).append("\n");
+    sb.append("  listImage: ").append(listImage).append("\n");
     sb.append("  body: ").append(body).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
