@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
 *ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
 *ListsApi* | [**mostreadGet**](docs/ListsApi.md#mostreadGet) | **GET** /mostread | Returns a list of most read articles
+*NotifiersApi* | [**notifyPost**](docs/NotifiersApi.md#notifyPost) | **POST** /notify | Listens to OC Notifier
 
 
 ## Documentation for Models
