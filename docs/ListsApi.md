@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## frontpageGet
 
-> List&lt;Article&gt; frontpageGet()
+> List&lt;Article&gt; frontpageGet(category)
 
 Returns a list for a front page
 
@@ -23,8 +23,9 @@ Returns a list for a front page
 //import org.openapitools.client.api.ListsApi;
 
 ListsApi apiInstance = new ListsApi();
+String category = null; // String | 
 try {
-    List<Article> result = apiInstance.frontpageGet();
+    List<Article> result = apiInstance.frontpageGet(category);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#frontpageGet");
@@ -34,7 +35,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category** | **String**|  | [optional] [default to null]
 
 ### Return type
 

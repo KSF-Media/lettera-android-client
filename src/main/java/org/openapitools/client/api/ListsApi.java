@@ -58,9 +58,10 @@ public class ListsApi {
   /**
   * Returns a list for a front page
   * 
+   * @param category 
    * @return List<Article>
   */
-  public List<Article> frontpageGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Article> frontpageGet (String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -72,6 +73,7 @@ public class ListsApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -114,9 +116,9 @@ public class ListsApi {
       /**
    * Returns a list for a front page
    * 
-
+   * @param category 
   */
-  public void frontpageGet (final Response.Listener<List<Article>> responseListener, final Response.ErrorListener errorListener) {
+  public void frontpageGet (String category, final Response.Listener<List<Article>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -130,6 +132,7 @@ public class ListsApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
 
 
     String[] contentTypes = {
