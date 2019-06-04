@@ -101,6 +101,7 @@ Class | Method | HTTP request | Description
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
  - [FactInfo](docs/FactInfo.md)
  - [ImageInfo](docs/ImageInfo.md)
+ - [RelatedArticle](docs/RelatedArticle.md)
 
 
 ## Documentation for Authorization

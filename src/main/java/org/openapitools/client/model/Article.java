@@ -18,6 +18,7 @@ import org.openapitools.client.model.ArticleType;
 import org.openapitools.client.model.Author;
 import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
+import org.openapitools.client.model.RelatedArticle;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -51,7 +52,7 @@ public class Article {
   @SerializedName("externalScripts")
   private List<String> externalScripts = null;
   @SerializedName("relatedArticles")
-  private List<String> relatedArticles = null;
+  private List<RelatedArticle> relatedArticles = null;
 
   /**
    **/
@@ -185,11 +186,11 @@ public class Article {
 
   /**
    **/
-  @ApiModelProperty(value = "")
-  public List<String> getRelatedArticles() {
+  @ApiModelProperty(required = true, value = "")
+  public List<RelatedArticle> getRelatedArticles() {
     return relatedArticles;
   }
-  public void setRelatedArticles(List<String> relatedArticles) {
+  public void setRelatedArticles(List<RelatedArticle> relatedArticles) {
     this.relatedArticles = relatedArticles;
   }
 

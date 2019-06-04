@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **updateTime** | **String** |  |  [optional]
 **articleType** | [**ArticleType**](ArticleType.md) |  | 
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
-**relatedArticles** | **List&lt;String&gt;** |  |  [optional]
+**relatedArticles** | [**List&lt;RelatedArticle&gt;**](RelatedArticle.md) |  | 
 
 
 
