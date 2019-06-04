@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## frontpageGet
 
-> List&lt;Article&gt; frontpageGet(category)
+> List&lt;Article&gt; frontpageGet(start, limit, category)
 
 Returns a list for a front page
 
@@ -23,9 +23,11 @@ Returns a list for a front page
 //import org.openapitools.client.api.ListsApi;
 
 ListsApi apiInstance = new ListsApi();
+Integer start = null; // Integer | 
+Integer limit = null; // Integer | 
 String category = null; // String | 
 try {
-    List<Article> result = apiInstance.frontpageGet(category);
+    List<Article> result = apiInstance.frontpageGet(start, limit, category);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#frontpageGet");
@@ -38,6 +40,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start** | **Integer**|  | [optional] [default to null]
+ **limit** | **Integer**|  | [optional] [default to null]
  **category** | **String**|  | [optional] [default to null]
 
 ### Return type
@@ -56,7 +60,7 @@ No authorization required
 
 ## latestGet
 
-> List&lt;Article&gt; latestGet()
+> List&lt;Article&gt; latestGet(start, limit)
 
 Returns a list of latest articles
 
@@ -67,8 +71,10 @@ Returns a list of latest articles
 //import org.openapitools.client.api.ListsApi;
 
 ListsApi apiInstance = new ListsApi();
+Integer start = null; // Integer | 
+Integer limit = null; // Integer | 
 try {
-    List<Article> result = apiInstance.latestGet();
+    List<Article> result = apiInstance.latestGet(start, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#latestGet");
@@ -78,7 +84,11 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start** | **Integer**|  | [optional] [default to null]
+ **limit** | **Integer**|  | [optional] [default to null]
 
 ### Return type
 
@@ -96,7 +106,7 @@ No authorization required
 
 ## mostreadGet
 
-> List&lt;Article&gt; mostreadGet()
+> List&lt;Article&gt; mostreadGet(start, limit)
 
 Returns a list of most read articles
 
@@ -107,8 +117,10 @@ Returns a list of most read articles
 //import org.openapitools.client.api.ListsApi;
 
 ListsApi apiInstance = new ListsApi();
+Integer start = null; // Integer | 
+Integer limit = null; // Integer | 
 try {
-    List<Article> result = apiInstance.mostreadGet();
+    List<Article> result = apiInstance.mostreadGet(start, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#mostreadGet");
@@ -118,7 +130,11 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start** | **Integer**|  | [optional] [default to null]
+ **limit** | **Integer**|  | [optional] [default to null]
 
 ### Return type
 

@@ -64,9 +64,11 @@ public class ArticlesApiExample {
 
     public static void main(String[] args) {
         ArticlesApi apiInstance = new ArticlesApi();
+        Integer start = null; // Integer | 
+        Integer limit = null; // Integer | 
         String contentQuery = null; // String | 
         try {
-            List<Article> result = apiInstance.articleSearchGet(contentQuery);
+            List<Article> result = apiInstance.articleSearchGet(start, limit, contentQuery);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ArticlesApi#articleSearchGet");

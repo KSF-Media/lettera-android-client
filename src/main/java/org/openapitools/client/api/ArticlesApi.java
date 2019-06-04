@@ -59,10 +59,12 @@ public class ArticlesApi {
   /**
   * 
   * Search article by content. It&#39;s a freetext search, so the &#x60;contentQuery&#x60; may be whatever string or sentence to search for.
+   * @param start 
+   * @param limit 
    * @param contentQuery 
    * @return List<Article>
   */
-  public List<Article> articleSearchGet (String contentQuery) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Article> articleSearchGet (Integer start, Integer limit, String contentQuery) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -74,6 +76,8 @@ public class ArticlesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "contentQuery", contentQuery));
     String[] contentTypes = {
     };
@@ -117,9 +121,9 @@ public class ArticlesApi {
       /**
    * 
    * Search article by content. It&#39;s a freetext search, so the &#x60;contentQuery&#x60; may be whatever string or sentence to search for.
-   * @param contentQuery 
+   * @param start    * @param limit    * @param contentQuery 
   */
-  public void articleSearchGet (String contentQuery, final Response.Listener<List<Article>> responseListener, final Response.ErrorListener errorListener) {
+  public void articleSearchGet (Integer start, Integer limit, String contentQuery, final Response.Listener<List<Article>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -133,6 +137,8 @@ public class ArticlesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "contentQuery", contentQuery));
 
 

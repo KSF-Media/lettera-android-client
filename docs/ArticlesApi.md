@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## articleSearchGet
 
-> List&lt;Article&gt; articleSearchGet(contentQuery)
+> List&lt;Article&gt; articleSearchGet(start, limit, contentQuery)
 
 
 
@@ -24,9 +24,11 @@ Search article by content. It&#39;s a freetext search, so the &#x60;contentQuery
 //import org.openapitools.client.api.ArticlesApi;
 
 ArticlesApi apiInstance = new ArticlesApi();
+Integer start = null; // Integer | 
+Integer limit = null; // Integer | 
 String contentQuery = null; // String | 
 try {
-    List<Article> result = apiInstance.articleSearchGet(contentQuery);
+    List<Article> result = apiInstance.articleSearchGet(start, limit, contentQuery);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArticlesApi#articleSearchGet");
@@ -39,6 +41,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **start** | **Integer**|  | [optional] [default to null]
+ **limit** | **Integer**|  | [optional] [default to null]
  **contentQuery** | **String**|  | [optional] [default to null]
 
 ### Return type
