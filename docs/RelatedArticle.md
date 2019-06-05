@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **listImage** | [**ImageInfo**](ImageInfo.md) |  |  [optional]
 **publishingTime** | **String** |  | 
 **premium** | **Boolean** |  | 
+**tags** | **List&lt;String&gt;** |  | 
 
 
 

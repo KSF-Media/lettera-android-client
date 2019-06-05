@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import java.util.*;
 import java.util.UUID;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
@@ -32,6 +33,8 @@ public class RelatedArticle {
   private String publishingTime = null;
   @SerializedName("premium")
   private Boolean premium = null;
+  @SerializedName("tags")
+  private List<String> tags = null;
 
   /**
    **/
@@ -93,6 +96,16 @@ public class RelatedArticle {
     this.premium = premium;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public List<String> getTags() {
+    return tags;
+  }
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -108,7 +121,8 @@ public class RelatedArticle {
         (this.preamble == null ? relatedArticle.preamble == null : this.preamble.equals(relatedArticle.preamble)) &&
         (this.listImage == null ? relatedArticle.listImage == null : this.listImage.equals(relatedArticle.listImage)) &&
         (this.publishingTime == null ? relatedArticle.publishingTime == null : this.publishingTime.equals(relatedArticle.publishingTime)) &&
-        (this.premium == null ? relatedArticle.premium == null : this.premium.equals(relatedArticle.premium));
+        (this.premium == null ? relatedArticle.premium == null : this.premium.equals(relatedArticle.premium)) &&
+        (this.tags == null ? relatedArticle.tags == null : this.tags.equals(relatedArticle.tags));
   }
 
   @Override
@@ -120,6 +134,7 @@ public class RelatedArticle {
     result = 31 * result + (this.listImage == null ? 0: this.listImage.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
+    result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     return result;
   }
 
@@ -134,6 +149,7 @@ public class RelatedArticle {
     sb.append("  listImage: ").append(listImage).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
