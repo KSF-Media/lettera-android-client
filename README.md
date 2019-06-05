@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ArticlesApi* | [**articleSearchGet**](docs/ArticlesApi.md#articleSearchGet) | **GET** /article/search | 
 *ArticlesApi* | [**articleUuidGet**](docs/ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
+*CategoriesApi* | [**categoriesGet**](docs/CategoriesApi.md#categoriesGet) | **GET** /categories | Read categories
 *ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
 *ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
 *ListsApi* | [**mostreadGet**](docs/ListsApi.md#mostreadGet) | **GET** /mostread | Returns a list of most read articles
@@ -101,6 +102,8 @@ Class | Method | HTTP request | Description
  - [Author](docs/Author.md)
  - [Block](docs/Block.md)
  - [BlockShortcodeError](docs/BlockShortcodeError.md)
+ - [Category](docs/Category.md)
+ - [CategoryHierarchy](docs/CategoryHierarchy.md)
  - [FactInfo](docs/FactInfo.md)
  - [ImageInfo](docs/ImageInfo.md)
  - [RelatedArticle](docs/RelatedArticle.md)
