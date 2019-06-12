@@ -14,16 +14,14 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
-import org.openapitools.client.model.ArticleType;
 import org.openapitools.client.model.Author;
-import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
 import org.openapitools.client.model.RelatedArticle;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class Article {
+public class ListArticle {
   
   @SerializedName("uuid")
   private UUID uuid = null;
@@ -35,26 +33,16 @@ public class Article {
   private List<String> tags = null;
   @SerializedName("preamble")
   private String preamble = null;
-  @SerializedName("mainImage")
-  private ImageInfo mainImage = null;
   @SerializedName("listImage")
   private ImageInfo listImage = null;
-  @SerializedName("body")
-  private List<Block> body = null;
   @SerializedName("premium")
   private Boolean premium = null;
   @SerializedName("publishingTime")
   private String publishingTime = null;
   @SerializedName("updateTime")
   private String updateTime = null;
-  @SerializedName("articleType")
-  private ArticleType articleType = null;
-  @SerializedName("externalScripts")
-  private List<String> externalScripts = null;
   @SerializedName("relatedArticles")
   private List<RelatedArticle> relatedArticles = null;
-  @SerializedName("shareUrl")
-  private String shareUrl = null;
 
   /**
    **/
@@ -109,31 +97,11 @@ public class Article {
   /**
    **/
   @ApiModelProperty(value = "")
-  public ImageInfo getMainImage() {
-    return mainImage;
-  }
-  public void setMainImage(ImageInfo mainImage) {
-    this.mainImage = mainImage;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
   public ImageInfo getListImage() {
     return listImage;
   }
   public void setListImage(ImageInfo listImage) {
     this.listImage = listImage;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
-  public List<Block> getBody() {
-    return body;
-  }
-  public void setBody(List<Block> body) {
-    this.body = body;
   }
 
   /**
@@ -169,41 +137,11 @@ public class Article {
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public ArticleType getArticleType() {
-    return articleType;
-  }
-  public void setArticleType(ArticleType articleType) {
-    this.articleType = articleType;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public List<String> getExternalScripts() {
-    return externalScripts;
-  }
-  public void setExternalScripts(List<String> externalScripts) {
-    this.externalScripts = externalScripts;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(required = true, value = "")
   public List<RelatedArticle> getRelatedArticles() {
     return relatedArticles;
   }
   public void setRelatedArticles(List<RelatedArticle> relatedArticles) {
     this.relatedArticles = relatedArticles;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getShareUrl() {
-    return shareUrl;
-  }
-  public void setShareUrl(String shareUrl) {
-    this.shareUrl = shareUrl;
   }
 
 
@@ -215,22 +153,17 @@ public class Article {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Article article = (Article) o;
-    return (this.uuid == null ? article.uuid == null : this.uuid.equals(article.uuid)) &&
-        (this.title == null ? article.title == null : this.title.equals(article.title)) &&
-        (this.authors == null ? article.authors == null : this.authors.equals(article.authors)) &&
-        (this.tags == null ? article.tags == null : this.tags.equals(article.tags)) &&
-        (this.preamble == null ? article.preamble == null : this.preamble.equals(article.preamble)) &&
-        (this.mainImage == null ? article.mainImage == null : this.mainImage.equals(article.mainImage)) &&
-        (this.listImage == null ? article.listImage == null : this.listImage.equals(article.listImage)) &&
-        (this.body == null ? article.body == null : this.body.equals(article.body)) &&
-        (this.premium == null ? article.premium == null : this.premium.equals(article.premium)) &&
-        (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
-        (this.updateTime == null ? article.updateTime == null : this.updateTime.equals(article.updateTime)) &&
-        (this.articleType == null ? article.articleType == null : this.articleType.equals(article.articleType)) &&
-        (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
-        (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles)) &&
-        (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl));
+    ListArticle listArticle = (ListArticle) o;
+    return (this.uuid == null ? listArticle.uuid == null : this.uuid.equals(listArticle.uuid)) &&
+        (this.title == null ? listArticle.title == null : this.title.equals(listArticle.title)) &&
+        (this.authors == null ? listArticle.authors == null : this.authors.equals(listArticle.authors)) &&
+        (this.tags == null ? listArticle.tags == null : this.tags.equals(listArticle.tags)) &&
+        (this.preamble == null ? listArticle.preamble == null : this.preamble.equals(listArticle.preamble)) &&
+        (this.listImage == null ? listArticle.listImage == null : this.listImage.equals(listArticle.listImage)) &&
+        (this.premium == null ? listArticle.premium == null : this.premium.equals(listArticle.premium)) &&
+        (this.publishingTime == null ? listArticle.publishingTime == null : this.publishingTime.equals(listArticle.publishingTime)) &&
+        (this.updateTime == null ? listArticle.updateTime == null : this.updateTime.equals(listArticle.updateTime)) &&
+        (this.relatedArticles == null ? listArticle.relatedArticles == null : this.relatedArticles.equals(listArticle.relatedArticles));
   }
 
   @Override
@@ -241,39 +174,29 @@ public class Article {
     result = 31 * result + (this.authors == null ? 0: this.authors.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
-    result = 31 * result + (this.mainImage == null ? 0: this.mainImage.hashCode());
     result = 31 * result + (this.listImage == null ? 0: this.listImage.hashCode());
-    result = 31 * result + (this.body == null ? 0: this.body.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
-    result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
-    result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
-    result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Article {\n");
+    sb.append("class ListArticle {\n");
     
     sb.append("  uuid: ").append(uuid).append("\n");
     sb.append("  title: ").append(title).append("\n");
     sb.append("  authors: ").append(authors).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
-    sb.append("  mainImage: ").append(mainImage).append("\n");
     sb.append("  listImage: ").append(listImage).append("\n");
-    sb.append("  body: ").append(body).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  updateTime: ").append(updateTime).append("\n");
-    sb.append("  articleType: ").append(articleType).append("\n");
-    sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
-    sb.append("  shareUrl: ").append(shareUrl).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

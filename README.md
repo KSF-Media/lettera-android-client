@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
  - [CategoryHierarchy](docs/CategoryHierarchy.md)
  - [FactInfo](docs/FactInfo.md)
  - [ImageInfo](docs/ImageInfo.md)
+ - [ListArticle](docs/ListArticle.md)
  - [RelatedArticle](docs/RelatedArticle.md)
 
 
