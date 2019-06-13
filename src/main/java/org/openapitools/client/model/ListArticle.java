@@ -14,6 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
+import org.openapitools.client.model.ArticleType;
 import org.openapitools.client.model.Author;
 import org.openapitools.client.model.ImageInfo;
 import org.openapitools.client.model.RelatedArticle;
@@ -43,6 +44,8 @@ public class ListArticle {
   private String updateTime = null;
   @SerializedName("relatedArticles")
   private List<RelatedArticle> relatedArticles = null;
+  @SerializedName("articleType")
+  private ArticleType articleType = null;
 
   /**
    **/
@@ -144,6 +147,16 @@ public class ListArticle {
     this.relatedArticles = relatedArticles;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public ArticleType getArticleType() {
+    return articleType;
+  }
+  public void setArticleType(ArticleType articleType) {
+    this.articleType = articleType;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -163,7 +176,8 @@ public class ListArticle {
         (this.premium == null ? listArticle.premium == null : this.premium.equals(listArticle.premium)) &&
         (this.publishingTime == null ? listArticle.publishingTime == null : this.publishingTime.equals(listArticle.publishingTime)) &&
         (this.updateTime == null ? listArticle.updateTime == null : this.updateTime.equals(listArticle.updateTime)) &&
-        (this.relatedArticles == null ? listArticle.relatedArticles == null : this.relatedArticles.equals(listArticle.relatedArticles));
+        (this.relatedArticles == null ? listArticle.relatedArticles == null : this.relatedArticles.equals(listArticle.relatedArticles)) &&
+        (this.articleType == null ? listArticle.articleType == null : this.articleType.equals(listArticle.articleType));
   }
 
   @Override
@@ -179,6 +193,7 @@ public class ListArticle {
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
+    result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
     return result;
   }
 
@@ -197,6 +212,7 @@ public class ListArticle {
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  updateTime: ").append(updateTime).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
+    sb.append("  articleType: ").append(articleType).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
