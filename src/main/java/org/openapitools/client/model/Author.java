@@ -18,29 +18,29 @@ import com.google.gson.annotations.SerializedName;
 @ApiModel(description = "")
 public class Author {
   
-  @SerializedName("authorByline")
-  private String authorByline = null;
-  @SerializedName("authorImage")
-  private String authorImage = null;
+  @SerializedName("byline")
+  private String byline = null;
+  @SerializedName("image")
+  private String image = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public String getAuthorByline() {
-    return authorByline;
+  public String getByline() {
+    return byline;
   }
-  public void setAuthorByline(String authorByline) {
-    this.authorByline = authorByline;
+  public void setByline(String byline) {
+    this.byline = byline;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getAuthorImage() {
-    return authorImage;
+  public String getImage() {
+    return image;
   }
-  public void setAuthorImage(String authorImage) {
-    this.authorImage = authorImage;
+  public void setImage(String image) {
+    this.image = image;
   }
 
 
@@ -53,15 +53,15 @@ public class Author {
       return false;
     }
     Author author = (Author) o;
-    return (this.authorByline == null ? author.authorByline == null : this.authorByline.equals(author.authorByline)) &&
-        (this.authorImage == null ? author.authorImage == null : this.authorImage.equals(author.authorImage));
+    return (this.byline == null ? author.byline == null : this.byline.equals(author.byline)) &&
+        (this.image == null ? author.image == null : this.image.equals(author.image));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
-    result = 31 * result + (this.authorByline == null ? 0: this.authorByline.hashCode());
-    result = 31 * result + (this.authorImage == null ? 0: this.authorImage.hashCode());
+    result = 31 * result + (this.byline == null ? 0: this.byline.hashCode());
+    result = 31 * result + (this.image == null ? 0: this.image.hashCode());
     return result;
   }
 
@@ -70,8 +70,8 @@ public class Author {
     StringBuilder sb = new StringBuilder();
     sb.append("class Author {\n");
     
-    sb.append("  authorByline: ").append(authorByline).append("\n");
-    sb.append("  authorImage: ").append(authorImage).append("\n");
+    sb.append("  byline: ").append(byline).append("\n");
+    sb.append("  image: ").append(image).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
