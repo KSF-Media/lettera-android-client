@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
- **category** | **String**|  | [optional] [default to null]
+ **category** | **String**|  | [optional] [default to null] [enum: Framsidan, Nyheter, Ekonomi, NordenOchVarlden, Finland, KlimatOchMiljo, Kultur, Litteratur, Musik, Scen, Konst, FilmOchTv, Opinion, Ledare, Kolumner, Debatt, Kronikor, Sport, Handboll, Fotboll, Ishockey, Motorsport, Friidrott, Skidsport, Livsstil, MedicinOchHalsa, FamiljOchRelationer, MatOchDryck, Resor, BilarOchFordon, HemOchTradgard]
 
 ### Return type
 
