@@ -12,8 +12,6 @@
 
 package org.openapitools.client.model;
 
-import java.util.*;
-import org.openapitools.client.model.BlockShortcodeError;
 import org.openapitools.client.model.FactInfo;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
@@ -32,18 +30,6 @@ public class Block {
   private FactInfo factBox = null;
   @SerializedName("headline")
   private String headline = null;
-  @SerializedName("shortcodeError")
-  private BlockShortcodeError shortcodeError = null;
-  @SerializedName("embed")
-  private List<Object> embed = null;
-  @SerializedName("instagramEmbed")
-  private String instagramEmbed = null;
-  @SerializedName("infogramEmbed")
-  private List<Object> infogramEmbed = null;
-  @SerializedName("twitterEmbed")
-  private String twitterEmbed = null;
-  @SerializedName("facebookEmbed")
-  private String facebookEmbed = null;
   @SerializedName("quote")
   private String quote = null;
 
@@ -100,66 +86,6 @@ public class Block {
   /**
    **/
   @ApiModelProperty(value = "")
-  public BlockShortcodeError getShortcodeError() {
-    return shortcodeError;
-  }
-  public void setShortcodeError(BlockShortcodeError shortcodeError) {
-    this.shortcodeError = shortcodeError;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public List<Object> getEmbed() {
-    return embed;
-  }
-  public void setEmbed(List<Object> embed) {
-    this.embed = embed;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getInstagramEmbed() {
-    return instagramEmbed;
-  }
-  public void setInstagramEmbed(String instagramEmbed) {
-    this.instagramEmbed = instagramEmbed;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public List<Object> getInfogramEmbed() {
-    return infogramEmbed;
-  }
-  public void setInfogramEmbed(List<Object> infogramEmbed) {
-    this.infogramEmbed = infogramEmbed;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getTwitterEmbed() {
-    return twitterEmbed;
-  }
-  public void setTwitterEmbed(String twitterEmbed) {
-    this.twitterEmbed = twitterEmbed;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
-  public String getFacebookEmbed() {
-    return facebookEmbed;
-  }
-  public void setFacebookEmbed(String facebookEmbed) {
-    this.facebookEmbed = facebookEmbed;
-  }
-
-  /**
-   **/
-  @ApiModelProperty(value = "")
   public String getQuote() {
     return quote;
   }
@@ -182,12 +108,6 @@ public class Block {
         (this.image == null ? block.image == null : this.image.equals(block.image)) &&
         (this.factBox == null ? block.factBox == null : this.factBox.equals(block.factBox)) &&
         (this.headline == null ? block.headline == null : this.headline.equals(block.headline)) &&
-        (this.shortcodeError == null ? block.shortcodeError == null : this.shortcodeError.equals(block.shortcodeError)) &&
-        (this.embed == null ? block.embed == null : this.embed.equals(block.embed)) &&
-        (this.instagramEmbed == null ? block.instagramEmbed == null : this.instagramEmbed.equals(block.instagramEmbed)) &&
-        (this.infogramEmbed == null ? block.infogramEmbed == null : this.infogramEmbed.equals(block.infogramEmbed)) &&
-        (this.twitterEmbed == null ? block.twitterEmbed == null : this.twitterEmbed.equals(block.twitterEmbed)) &&
-        (this.facebookEmbed == null ? block.facebookEmbed == null : this.facebookEmbed.equals(block.facebookEmbed)) &&
         (this.quote == null ? block.quote == null : this.quote.equals(block.quote));
   }
 
@@ -199,12 +119,6 @@ public class Block {
     result = 31 * result + (this.image == null ? 0: this.image.hashCode());
     result = 31 * result + (this.factBox == null ? 0: this.factBox.hashCode());
     result = 31 * result + (this.headline == null ? 0: this.headline.hashCode());
-    result = 31 * result + (this.shortcodeError == null ? 0: this.shortcodeError.hashCode());
-    result = 31 * result + (this.embed == null ? 0: this.embed.hashCode());
-    result = 31 * result + (this.instagramEmbed == null ? 0: this.instagramEmbed.hashCode());
-    result = 31 * result + (this.infogramEmbed == null ? 0: this.infogramEmbed.hashCode());
-    result = 31 * result + (this.twitterEmbed == null ? 0: this.twitterEmbed.hashCode());
-    result = 31 * result + (this.facebookEmbed == null ? 0: this.facebookEmbed.hashCode());
     result = 31 * result + (this.quote == null ? 0: this.quote.hashCode());
     return result;
   }
@@ -219,12 +133,6 @@ public class Block {
     sb.append("  image: ").append(image).append("\n");
     sb.append("  factBox: ").append(factBox).append("\n");
     sb.append("  headline: ").append(headline).append("\n");
-    sb.append("  shortcodeError: ").append(shortcodeError).append("\n");
-    sb.append("  embed: ").append(embed).append("\n");
-    sb.append("  instagramEmbed: ").append(instagramEmbed).append("\n");
-    sb.append("  infogramEmbed: ").append(infogramEmbed).append("\n");
-    sb.append("  twitterEmbed: ").append(twitterEmbed).append("\n");
-    sb.append("  facebookEmbed: ").append(facebookEmbed).append("\n");
     sb.append("  quote: ").append(quote).append("\n");
     sb.append("}\n");
     return sb.toString();
