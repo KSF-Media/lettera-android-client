@@ -13,7 +13,6 @@
 package org.openapitools.client.model;
 
 import java.util.*;
-import org.openapitools.client.model.Category;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
@@ -21,27 +20,27 @@ import com.google.gson.annotations.SerializedName;
 public class CategoryHierarchy {
   
   @SerializedName("name")
-  private Category name = null;
+  private String name = null;
   @SerializedName("subcategories")
-  private List<Category> subcategories = null;
+  private List<String> subcategories = null;
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public Category getName() {
+  public String getName() {
     return name;
   }
-  public void setName(Category name) {
+  public void setName(String name) {
     this.name = name;
   }
 
   /**
    **/
   @ApiModelProperty(required = true, value = "")
-  public List<Category> getSubcategories() {
+  public List<String> getSubcategories() {
     return subcategories;
   }
-  public void setSubcategories(List<Category> subcategories) {
+  public void setSubcategories(List<String> subcategories) {
     this.subcategories = subcategories;
   }
 
