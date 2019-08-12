@@ -21,7 +21,7 @@ Listens to OC Notifier
 //import org.openapitools.client.api.NotifiersApi;
 
 NotifiersApi apiInstance = new NotifiersApi();
-String body = "body_example"; // String | 
+Notification body = new Notification(); // Notification | 
 try {
     apiInstance.notifyPost(body);
 } catch (ApiException e) {
@@ -35,7 +35,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**|  |
+ **body** | [**Notification**](Notification.md)|  |
 
 ### Return type
 

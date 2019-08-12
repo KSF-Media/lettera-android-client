@@ -81,6 +81,10 @@ public class JsonUtil {
       return new TypeToken<List<CategoryHierarchy>>(){}.getType();
     }
     
+    if ("EventType".equalsIgnoreCase(className)) {
+      return new TypeToken<List<EventType>>(){}.getType();
+    }
+    
     if ("FactInfo".equalsIgnoreCase(className)) {
       return new TypeToken<List<FactInfo>>(){}.getType();
     }
@@ -91,6 +95,10 @@ public class JsonUtil {
     
     if ("ListArticle".equalsIgnoreCase(className)) {
       return new TypeToken<List<ListArticle>>(){}.getType();
+    }
+    
+    if ("Notification".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Notification>>(){}.getType();
     }
     
     if ("RelatedArticle".equalsIgnoreCase(className)) {
@@ -127,6 +135,10 @@ public class JsonUtil {
       return new TypeToken<CategoryHierarchy>(){}.getType();
     }
     
+    if ("EventType".equalsIgnoreCase(className)) {
+      return new TypeToken<EventType>(){}.getType();
+    }
+    
     if ("FactInfo".equalsIgnoreCase(className)) {
       return new TypeToken<FactInfo>(){}.getType();
     }
@@ -137,6 +149,10 @@ public class JsonUtil {
     
     if ("ListArticle".equalsIgnoreCase(className)) {
       return new TypeToken<ListArticle>(){}.getType();
+    }
+    
+    if ("Notification".equalsIgnoreCase(className)) {
+      return new TypeToken<Notification>(){}.getType();
     }
     
     if ("RelatedArticle".equalsIgnoreCase(className)) {

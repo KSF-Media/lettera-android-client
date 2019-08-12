@@ -23,6 +23,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import org.openapitools.client.model.Notification;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -60,7 +61,7 @@ public class NotifiersApi {
    * @param body 
    * @return void
   */
-  public void notifyPost (String body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void notifyPost (Notification body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
@@ -122,7 +123,7 @@ public class NotifiersApi {
    * 
    * @param body 
   */
-  public void notifyPost (String body, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void notifyPost (Notification body, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
