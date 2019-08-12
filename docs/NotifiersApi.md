@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## notifyPost
 
-> notifyPost(body)
+> notifyPost(body, token)
 
 Listens to OC Notifier
 
@@ -22,8 +22,9 @@ Listens to OC Notifier
 
 NotifiersApi apiInstance = new NotifiersApi();
 Notification body = new Notification(); // Notification | 
+String token = null; // String | 
 try {
-    apiInstance.notifyPost(body);
+    apiInstance.notifyPost(body, token);
 } catch (ApiException e) {
     System.err.println("Exception when calling NotifiersApi#notifyPost");
     e.printStackTrace();
@@ -36,6 +37,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**Notification**](Notification.md)|  |
+ **token** | **String**|  | [optional] [default to null]
 
 ### Return type
 

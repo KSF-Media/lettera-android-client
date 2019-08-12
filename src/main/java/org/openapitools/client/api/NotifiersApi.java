@@ -59,9 +59,10 @@ public class NotifiersApi {
   * Listens to OC Notifier
   * 
    * @param body 
+   * @param token 
    * @return void
   */
-  public void notifyPost (Notification body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void notifyPost (Notification body, String token) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = body;
     // verify the required parameter 'body' is set
     if (body == null) {
@@ -78,6 +79,7 @@ public class NotifiersApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "token", token));
     String[] contentTypes = {
       "application/json;charset=utf-8"
     };
@@ -121,9 +123,9 @@ public class NotifiersApi {
       /**
    * Listens to OC Notifier
    * 
-   * @param body 
+   * @param body    * @param token 
   */
-  public void notifyPost (Notification body, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void notifyPost (Notification body, String token, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = body;
 
     // verify the required parameter 'body' is set
@@ -142,6 +144,7 @@ public class NotifiersApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "token", token));
 
 
     String[] contentTypes = {
