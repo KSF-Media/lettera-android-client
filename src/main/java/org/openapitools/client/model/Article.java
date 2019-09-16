@@ -15,6 +15,7 @@ package org.openapitools.client.model;
 import java.util.*;
 import java.util.UUID;
 import org.openapitools.client.model.ArticleType;
+import org.openapitools.client.model.ArticleTypeDetails;
 import org.openapitools.client.model.Author;
 import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
@@ -49,6 +50,8 @@ public class Article {
   private String updateTime = null;
   @SerializedName("articleType")
   private ArticleType articleType = null;
+  @SerializedName("articleTypeDetails")
+  private ArticleTypeDetails articleTypeDetails = null;
   @SerializedName("externalScripts")
   private List<String> externalScripts = null;
   @SerializedName("relatedArticles")
@@ -179,6 +182,16 @@ public class Article {
   /**
    **/
   @ApiModelProperty(value = "")
+  public ArticleTypeDetails getArticleTypeDetails() {
+    return articleTypeDetails;
+  }
+  public void setArticleTypeDetails(ArticleTypeDetails articleTypeDetails) {
+    this.articleTypeDetails = articleTypeDetails;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public List<String> getExternalScripts() {
     return externalScripts;
   }
@@ -228,6 +241,7 @@ public class Article {
         (this.publishingTime == null ? article.publishingTime == null : this.publishingTime.equals(article.publishingTime)) &&
         (this.updateTime == null ? article.updateTime == null : this.updateTime.equals(article.updateTime)) &&
         (this.articleType == null ? article.articleType == null : this.articleType.equals(article.articleType)) &&
+        (this.articleTypeDetails == null ? article.articleTypeDetails == null : this.articleTypeDetails.equals(article.articleTypeDetails)) &&
         (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles)) &&
         (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl));
@@ -248,6 +262,7 @@ public class Article {
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.updateTime == null ? 0: this.updateTime.hashCode());
     result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
+    result = 31 * result + (this.articleTypeDetails == null ? 0: this.articleTypeDetails.hashCode());
     result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
@@ -271,6 +286,7 @@ public class Article {
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  updateTime: ").append(updateTime).append("\n");
     sb.append("  articleType: ").append(articleType).append("\n");
+    sb.append("  articleTypeDetails: ").append(articleTypeDetails).append("\n");
     sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
