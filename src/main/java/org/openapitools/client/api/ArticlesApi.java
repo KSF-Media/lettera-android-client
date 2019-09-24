@@ -187,9 +187,10 @@ public class ArticlesApi {
    * @param uuid 
    * @param authUser 
    * @param authorization 
+   * @param textonly 
    * @return Article
   */
-  public Article articleUuidGet (UUID uuid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Article articleUuidGet (UUID uuid, UUID authUser, String authorization, Boolean textonly) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -206,6 +207,7 @@ public class ArticlesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "textonly", textonly));
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
@@ -250,9 +252,9 @@ public class ArticlesApi {
       /**
    * 
    * Fetch article by UUID.   Notes about the images:   The image URLs point to our image scaler, and are returned without no scaling parameters.  However, if wanted, &#x60;width&#x60; and &#x60;height&#x60; parameters can be added to the querystring of the URL.  Also in list views, to ensure same size, it might be useful to crop the images by using the parameter &#x60;function&#x3D;hardcrop&#x60;
-   * @param uuid    * @param authUser    * @param authorization 
+   * @param uuid    * @param authUser    * @param authorization    * @param textonly 
   */
-  public void articleUuidGet (UUID uuid, UUID authUser, String authorization, final Response.Listener<Article> responseListener, final Response.ErrorListener errorListener) {
+  public void articleUuidGet (UUID uuid, UUID authUser, String authorization, Boolean textonly, final Response.Listener<Article> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -271,6 +273,7 @@ public class ArticlesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "textonly", textonly));
 
     headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
     headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
