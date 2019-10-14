@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## frontpageGet
 
-> List&lt;ListArticle&gt; frontpageGet(start, limit, category)
+> List&lt;ListArticle&gt; frontpageGet(start, limit, category, paper)
 
 Returns a list for a front page
 
@@ -26,8 +26,9 @@ ListsApi apiInstance = new ListsApi();
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
 String category = null; // String | 
+String paper = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.frontpageGet(start, limit, category);
+    List<ListArticle> result = apiInstance.frontpageGet(start, limit, category, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#frontpageGet");
@@ -43,6 +44,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
  **category** | **String**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
 
 ### Return type
 
@@ -60,7 +62,7 @@ No authorization required
 
 ## latestGet
 
-> List&lt;ListArticle&gt; latestGet(start, limit)
+> List&lt;ListArticle&gt; latestGet(start, limit, paper)
 
 Returns a list of latest articles
 
@@ -73,8 +75,9 @@ Returns a list of latest articles
 ListsApi apiInstance = new ListsApi();
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
+String paper = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.latestGet(start, limit);
+    List<ListArticle> result = apiInstance.latestGet(start, limit, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#latestGet");
@@ -89,6 +92,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
 
 ### Return type
 
@@ -106,7 +110,7 @@ No authorization required
 
 ## mostreadGet
 
-> List&lt;ListArticle&gt; mostreadGet(start, limit, category)
+> List&lt;ListArticle&gt; mostreadGet(start, limit, category, paper)
 
 Returns a list of most read articles
 
@@ -120,8 +124,9 @@ ListsApi apiInstance = new ListsApi();
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
 String category = null; // String | 
+String paper = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.mostreadGet(start, limit, category);
+    List<ListArticle> result = apiInstance.mostreadGet(start, limit, category, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#mostreadGet");
@@ -137,6 +142,7 @@ Name | Type | Description  | Notes
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
  **category** | **String**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
 
 ### Return type
 

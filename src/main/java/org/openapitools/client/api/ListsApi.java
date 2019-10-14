@@ -61,9 +61,10 @@ public class ListsApi {
    * @param start 
    * @param limit 
    * @param category 
+   * @param paper 
    * @return List<ListArticle>
   */
-  public List<ListArticle> frontpageGet (Integer start, Integer limit, String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ListArticle> frontpageGet (Integer start, Integer limit, String category, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -78,6 +79,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -120,9 +122,9 @@ public class ListsApi {
       /**
    * Returns a list for a front page
    * 
-   * @param start    * @param limit    * @param category 
+   * @param start    * @param limit    * @param category    * @param paper 
   */
-  public void frontpageGet (Integer start, Integer limit, String category, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
+  public void frontpageGet (Integer start, Integer limit, String category, String paper, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -139,6 +141,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
 
     String[] contentTypes = {
@@ -185,9 +188,10 @@ public class ListsApi {
   * 
    * @param start 
    * @param limit 
+   * @param paper 
    * @return List<ListArticle>
   */
-  public List<ListArticle> latestGet (Integer start, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ListArticle> latestGet (Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -201,6 +205,7 @@ public class ListsApi {
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -243,9 +248,9 @@ public class ListsApi {
       /**
    * Returns a list of latest articles
    * 
-   * @param start    * @param limit 
+   * @param start    * @param limit    * @param paper 
   */
-  public void latestGet (Integer start, Integer limit, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
+  public void latestGet (Integer start, Integer limit, String paper, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -261,6 +266,7 @@ public class ListsApi {
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
 
     String[] contentTypes = {
@@ -308,9 +314,10 @@ public class ListsApi {
    * @param start 
    * @param limit 
    * @param category 
+   * @param paper 
    * @return List<ListArticle>
   */
-  public List<ListArticle> mostreadGet (Integer start, Integer limit, String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ListArticle> mostreadGet (Integer start, Integer limit, String category, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -325,6 +332,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -367,9 +375,9 @@ public class ListsApi {
       /**
    * Returns a list of most read articles
    * 
-   * @param start    * @param limit    * @param category 
+   * @param start    * @param limit    * @param category    * @param paper 
   */
-  public void mostreadGet (Integer start, Integer limit, String category, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
+  public void mostreadGet (Integer start, Integer limit, String category, String paper, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -386,6 +394,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
 
     String[] contentTypes = {

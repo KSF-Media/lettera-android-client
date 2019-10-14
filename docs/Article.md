@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
 **relatedArticles** | [**List&lt;RelatedArticle&gt;**](RelatedArticle.md) |  | 
 **shareUrl** | **String** |  |  [optional]
+**paper** | [**Paper**](Paper.md) |  | 
 
 
 

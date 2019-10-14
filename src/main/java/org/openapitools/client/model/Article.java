@@ -19,6 +19,7 @@ import org.openapitools.client.model.ArticleTypeDetails;
 import org.openapitools.client.model.Author;
 import org.openapitools.client.model.Block;
 import org.openapitools.client.model.ImageInfo;
+import org.openapitools.client.model.Paper;
 import org.openapitools.client.model.RelatedArticle;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -58,6 +59,8 @@ public class Article {
   private List<RelatedArticle> relatedArticles = null;
   @SerializedName("shareUrl")
   private String shareUrl = null;
+  @SerializedName("paper")
+  private Paper paper = null;
 
   /**
    **/
@@ -219,6 +222,16 @@ public class Article {
     this.shareUrl = shareUrl;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Paper getPaper() {
+    return paper;
+  }
+  public void setPaper(Paper paper) {
+    this.paper = paper;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -244,7 +257,8 @@ public class Article {
         (this.articleTypeDetails == null ? article.articleTypeDetails == null : this.articleTypeDetails.equals(article.articleTypeDetails)) &&
         (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles)) &&
-        (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl));
+        (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl)) &&
+        (this.paper == null ? article.paper == null : this.paper.equals(article.paper));
   }
 
   @Override
@@ -266,6 +280,7 @@ public class Article {
     result = 31 * result + (this.externalScripts == null ? 0: this.externalScripts.hashCode());
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
+    result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     return result;
   }
 
@@ -290,6 +305,7 @@ public class Article {
     sb.append("  externalScripts: ").append(externalScripts).append("\n");
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
+    sb.append("  paper: ").append(paper).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

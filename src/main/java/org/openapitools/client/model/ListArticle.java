@@ -18,6 +18,7 @@ import org.openapitools.client.model.ArticleType;
 import org.openapitools.client.model.ArticleTypeDetails;
 import org.openapitools.client.model.Author;
 import org.openapitools.client.model.ImageInfo;
+import org.openapitools.client.model.Paper;
 import org.openapitools.client.model.RelatedArticle;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -49,6 +50,8 @@ public class ListArticle {
   private ArticleType articleType = null;
   @SerializedName("articleTypeDetails")
   private ArticleTypeDetails articleTypeDetails = null;
+  @SerializedName("paper")
+  private Paper paper = null;
 
   /**
    **/
@@ -170,6 +173,16 @@ public class ListArticle {
     this.articleTypeDetails = articleTypeDetails;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Paper getPaper() {
+    return paper;
+  }
+  public void setPaper(Paper paper) {
+    this.paper = paper;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -191,7 +204,8 @@ public class ListArticle {
         (this.updateTime == null ? listArticle.updateTime == null : this.updateTime.equals(listArticle.updateTime)) &&
         (this.relatedArticles == null ? listArticle.relatedArticles == null : this.relatedArticles.equals(listArticle.relatedArticles)) &&
         (this.articleType == null ? listArticle.articleType == null : this.articleType.equals(listArticle.articleType)) &&
-        (this.articleTypeDetails == null ? listArticle.articleTypeDetails == null : this.articleTypeDetails.equals(listArticle.articleTypeDetails));
+        (this.articleTypeDetails == null ? listArticle.articleTypeDetails == null : this.articleTypeDetails.equals(listArticle.articleTypeDetails)) &&
+        (this.paper == null ? listArticle.paper == null : this.paper.equals(listArticle.paper));
   }
 
   @Override
@@ -209,6 +223,7 @@ public class ListArticle {
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
     result = 31 * result + (this.articleTypeDetails == null ? 0: this.articleTypeDetails.hashCode());
+    result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     return result;
   }
 
@@ -229,6 +244,7 @@ public class ListArticle {
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("  articleType: ").append(articleType).append("\n");
     sb.append("  articleTypeDetails: ").append(articleTypeDetails).append("\n");
+    sb.append("  paper: ").append(paper).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

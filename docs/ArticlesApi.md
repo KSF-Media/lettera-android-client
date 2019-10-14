@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## articleSearchGet
 
-> List&lt;Article&gt; articleSearchGet(start, limit, contentQuery)
+> List&lt;Article&gt; articleSearchGet(start, limit, paper, contentQuery)
 
 
 
@@ -26,9 +26,10 @@ Search article by content. It&#39;s a freetext search, so the &#x60;contentQuery
 ArticlesApi apiInstance = new ArticlesApi();
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
+String paper = null; // String | 
 String contentQuery = null; // String | 
 try {
-    List<Article> result = apiInstance.articleSearchGet(start, limit, contentQuery);
+    List<Article> result = apiInstance.articleSearchGet(start, limit, paper, contentQuery);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArticlesApi#articleSearchGet");
@@ -43,6 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
  **contentQuery** | **String**|  | [optional] [default to null]
 
 ### Return type

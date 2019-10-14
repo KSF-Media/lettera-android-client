@@ -66,9 +66,10 @@ public class ArticlesApiExample {
         ArticlesApi apiInstance = new ArticlesApi();
         Integer start = null; // Integer | 
         Integer limit = null; // Integer | 
+        String paper = null; // String | 
         String contentQuery = null; // String | 
         try {
-            List<Article> result = apiInstance.articleSearchGet(start, limit, contentQuery);
+            List<Article> result = apiInstance.articleSearchGet(start, limit, paper, contentQuery);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling ArticlesApi#articleSearchGet");
@@ -108,6 +109,7 @@ Class | Method | HTTP request | Description
  - [ImageInfo](docs/ImageInfo.md)
  - [ListArticle](docs/ListArticle.md)
  - [Notification](docs/Notification.md)
+ - [Paper](docs/Paper.md)
  - [RelatedArticle](docs/RelatedArticle.md)
 
 
