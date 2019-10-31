@@ -43,7 +43,7 @@ public class Notification {
    * minimum: -9223372036854775808
    * maximum: 9223372036854775807
    **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Integer getEventid() {
     return eventid;
   }
