@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **relatedArticles** | [**List&lt;RelatedArticle&gt;**](RelatedArticle.md) |  | 
 **shareUrl** | **String** |  |  [optional]
 **paper** | [**Paper**](Paper.md) |  | 
+**analyticsCategories** | **String** |  |  [optional]
+**analyticsSections** | **String** |  |  [optional]
 
 
 

@@ -61,6 +61,10 @@ public class Article {
   private String shareUrl = null;
   @SerializedName("paper")
   private Paper paper = null;
+  @SerializedName("analyticsCategories")
+  private String analyticsCategories = null;
+  @SerializedName("analyticsSections")
+  private String analyticsSections = null;
 
   /**
    **/
@@ -232,6 +236,26 @@ public class Article {
     this.paper = paper;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getAnalyticsCategories() {
+    return analyticsCategories;
+  }
+  public void setAnalyticsCategories(String analyticsCategories) {
+    this.analyticsCategories = analyticsCategories;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getAnalyticsSections() {
+    return analyticsSections;
+  }
+  public void setAnalyticsSections(String analyticsSections) {
+    this.analyticsSections = analyticsSections;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -258,7 +282,9 @@ public class Article {
         (this.externalScripts == null ? article.externalScripts == null : this.externalScripts.equals(article.externalScripts)) &&
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles)) &&
         (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl)) &&
-        (this.paper == null ? article.paper == null : this.paper.equals(article.paper));
+        (this.paper == null ? article.paper == null : this.paper.equals(article.paper)) &&
+        (this.analyticsCategories == null ? article.analyticsCategories == null : this.analyticsCategories.equals(article.analyticsCategories)) &&
+        (this.analyticsSections == null ? article.analyticsSections == null : this.analyticsSections.equals(article.analyticsSections));
   }
 
   @Override
@@ -281,6 +307,8 @@ public class Article {
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
+    result = 31 * result + (this.analyticsCategories == null ? 0: this.analyticsCategories.hashCode());
+    result = 31 * result + (this.analyticsSections == null ? 0: this.analyticsSections.hashCode());
     return result;
   }
 
@@ -306,6 +334,8 @@ public class Article {
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
+    sb.append("  analyticsCategories: ").append(analyticsCategories).append("\n");
+    sb.append("  analyticsSections: ").append(analyticsSections).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
