@@ -61,10 +61,10 @@ public class Article {
   private String shareUrl = null;
   @SerializedName("paper")
   private Paper paper = null;
-  @SerializedName("analyticsCategories")
-  private String analyticsCategories = null;
-  @SerializedName("analyticsSections")
-  private String analyticsSections = null;
+  @SerializedName("analyticsCategory")
+  private String analyticsCategory = null;
+  @SerializedName("analyticsSection")
+  private String analyticsSection = null;
 
   /**
    **/
@@ -239,21 +239,21 @@ public class Article {
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getAnalyticsCategories() {
-    return analyticsCategories;
+  public String getAnalyticsCategory() {
+    return analyticsCategory;
   }
-  public void setAnalyticsCategories(String analyticsCategories) {
-    this.analyticsCategories = analyticsCategories;
+  public void setAnalyticsCategory(String analyticsCategory) {
+    this.analyticsCategory = analyticsCategory;
   }
 
   /**
    **/
   @ApiModelProperty(value = "")
-  public String getAnalyticsSections() {
-    return analyticsSections;
+  public String getAnalyticsSection() {
+    return analyticsSection;
   }
-  public void setAnalyticsSections(String analyticsSections) {
-    this.analyticsSections = analyticsSections;
+  public void setAnalyticsSection(String analyticsSection) {
+    this.analyticsSection = analyticsSection;
   }
 
 
@@ -283,8 +283,8 @@ public class Article {
         (this.relatedArticles == null ? article.relatedArticles == null : this.relatedArticles.equals(article.relatedArticles)) &&
         (this.shareUrl == null ? article.shareUrl == null : this.shareUrl.equals(article.shareUrl)) &&
         (this.paper == null ? article.paper == null : this.paper.equals(article.paper)) &&
-        (this.analyticsCategories == null ? article.analyticsCategories == null : this.analyticsCategories.equals(article.analyticsCategories)) &&
-        (this.analyticsSections == null ? article.analyticsSections == null : this.analyticsSections.equals(article.analyticsSections));
+        (this.analyticsCategory == null ? article.analyticsCategory == null : this.analyticsCategory.equals(article.analyticsCategory)) &&
+        (this.analyticsSection == null ? article.analyticsSection == null : this.analyticsSection.equals(article.analyticsSection));
   }
 
   @Override
@@ -307,8 +307,8 @@ public class Article {
     result = 31 * result + (this.relatedArticles == null ? 0: this.relatedArticles.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
-    result = 31 * result + (this.analyticsCategories == null ? 0: this.analyticsCategories.hashCode());
-    result = 31 * result + (this.analyticsSections == null ? 0: this.analyticsSections.hashCode());
+    result = 31 * result + (this.analyticsCategory == null ? 0: this.analyticsCategory.hashCode());
+    result = 31 * result + (this.analyticsSection == null ? 0: this.analyticsSection.hashCode());
     return result;
   }
 
@@ -334,8 +334,8 @@ public class Article {
     sb.append("  relatedArticles: ").append(relatedArticles).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
-    sb.append("  analyticsCategories: ").append(analyticsCategories).append("\n");
-    sb.append("  analyticsSections: ").append(analyticsSections).append("\n");
+    sb.append("  analyticsCategory: ").append(analyticsCategory).append("\n");
+    sb.append("  analyticsSection: ").append(analyticsSection).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
