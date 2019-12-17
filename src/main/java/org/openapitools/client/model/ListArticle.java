@@ -52,6 +52,8 @@ public class ListArticle {
   private ArticleTypeDetails articleTypeDetails = null;
   @SerializedName("paper")
   private Paper paper = null;
+  @SerializedName("shareUrl")
+  private String shareUrl = null;
 
   /**
    **/
@@ -183,6 +185,16 @@ public class ListArticle {
     this.paper = paper;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getShareUrl() {
+    return shareUrl;
+  }
+  public void setShareUrl(String shareUrl) {
+    this.shareUrl = shareUrl;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -205,7 +217,8 @@ public class ListArticle {
         (this.relatedArticles == null ? listArticle.relatedArticles == null : this.relatedArticles.equals(listArticle.relatedArticles)) &&
         (this.articleType == null ? listArticle.articleType == null : this.articleType.equals(listArticle.articleType)) &&
         (this.articleTypeDetails == null ? listArticle.articleTypeDetails == null : this.articleTypeDetails.equals(listArticle.articleTypeDetails)) &&
-        (this.paper == null ? listArticle.paper == null : this.paper.equals(listArticle.paper));
+        (this.paper == null ? listArticle.paper == null : this.paper.equals(listArticle.paper)) &&
+        (this.shareUrl == null ? listArticle.shareUrl == null : this.shareUrl.equals(listArticle.shareUrl));
   }
 
   @Override
@@ -224,6 +237,7 @@ public class ListArticle {
     result = 31 * result + (this.articleType == null ? 0: this.articleType.hashCode());
     result = 31 * result + (this.articleTypeDetails == null ? 0: this.articleTypeDetails.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
+    result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
     return result;
   }
 
@@ -245,6 +259,7 @@ public class ListArticle {
     sb.append("  articleType: ").append(articleType).append("\n");
     sb.append("  articleTypeDetails: ").append(articleTypeDetails).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
+    sb.append("  shareUrl: ").append(shareUrl).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
