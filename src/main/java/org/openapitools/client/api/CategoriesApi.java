@@ -58,9 +58,10 @@ public class CategoriesApi {
   /**
   * Read categories
   * 
+   * @param paper 
    * @return List<CategoryHierarchy>
   */
-  public List<CategoryHierarchy> categoriesGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<CategoryHierarchy> categoriesGet (String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -72,6 +73,7 @@ public class CategoriesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -114,9 +116,9 @@ public class CategoriesApi {
       /**
    * Read categories
    * 
-
+   * @param paper 
   */
-  public void categoriesGet (final Response.Listener<List<CategoryHierarchy>> responseListener, final Response.ErrorListener errorListener) {
+  public void categoriesGet (String paper, final Response.Listener<List<CategoryHierarchy>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -130,6 +132,7 @@ public class CategoriesApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
 
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
 
     String[] contentTypes = {

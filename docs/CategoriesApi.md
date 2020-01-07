@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## categoriesGet
 
-> List&lt;CategoryHierarchy&gt; categoriesGet()
+> List&lt;CategoryHierarchy&gt; categoriesGet(paper)
 
 Read categories
 
@@ -21,8 +21,9 @@ Read categories
 //import org.openapitools.client.api.CategoriesApi;
 
 CategoriesApi apiInstance = new CategoriesApi();
+String paper = null; // String | 
 try {
-    List<CategoryHierarchy> result = apiInstance.categoriesGet();
+    List<CategoryHierarchy> result = apiInstance.categoriesGet(paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CategoriesApi#categoriesGet");
@@ -32,7 +33,10 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
 
 ### Return type
 
