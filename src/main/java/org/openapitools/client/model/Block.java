@@ -30,6 +30,10 @@ public class Block {
   private FactInfo factBox = null;
   @SerializedName("headline")
   private String headline = null;
+  @SerializedName("footnote")
+  private String footnote = null;
+  @SerializedName("question")
+  private String question = null;
   @SerializedName("quote")
   private String quote = null;
 
@@ -86,6 +90,26 @@ public class Block {
   /**
    **/
   @ApiModelProperty(value = "")
+  public String getFootnote() {
+    return footnote;
+  }
+  public void setFootnote(String footnote) {
+    this.footnote = footnote;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getQuestion() {
+    return question;
+  }
+  public void setQuestion(String question) {
+    this.question = question;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
   public String getQuote() {
     return quote;
   }
@@ -108,6 +132,8 @@ public class Block {
         (this.image == null ? block.image == null : this.image.equals(block.image)) &&
         (this.factBox == null ? block.factBox == null : this.factBox.equals(block.factBox)) &&
         (this.headline == null ? block.headline == null : this.headline.equals(block.headline)) &&
+        (this.footnote == null ? block.footnote == null : this.footnote.equals(block.footnote)) &&
+        (this.question == null ? block.question == null : this.question.equals(block.question)) &&
         (this.quote == null ? block.quote == null : this.quote.equals(block.quote));
   }
 
@@ -119,6 +145,8 @@ public class Block {
     result = 31 * result + (this.image == null ? 0: this.image.hashCode());
     result = 31 * result + (this.factBox == null ? 0: this.factBox.hashCode());
     result = 31 * result + (this.headline == null ? 0: this.headline.hashCode());
+    result = 31 * result + (this.footnote == null ? 0: this.footnote.hashCode());
+    result = 31 * result + (this.question == null ? 0: this.question.hashCode());
     result = 31 * result + (this.quote == null ? 0: this.quote.hashCode());
     return result;
   }
@@ -133,6 +161,8 @@ public class Block {
     sb.append("  image: ").append(image).append("\n");
     sb.append("  factBox: ").append(factBox).append("\n");
     sb.append("  headline: ").append(headline).append("\n");
+    sb.append("  footnote: ").append(footnote).append("\n");
+    sb.append("  question: ").append(question).append("\n");
     sb.append("  quote: ").append(quote).append("\n");
     sb.append("}\n");
     return sb.toString();
