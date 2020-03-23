@@ -1,6 +1,6 @@
 # CategoriesApi
 
-All URIs are relative to *http://http:/v1*
+All URIs are relative to *http://http:/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## categoriesGet
 
-> List&lt;Object&gt; categoriesGet(paper)
+> List&lt;Category&gt; categoriesGet(paper)
 
 Read categories
 
@@ -23,7 +23,7 @@ Read categories
 CategoriesApi apiInstance = new CategoriesApi();
 String paper = null; // String | 
 try {
-    List<Object> result = apiInstance.categoriesGet(paper);
+    List<Category> result = apiInstance.categoriesGet(paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CategoriesApi#categoriesGet");
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;Category&gt;**](Category.md)
 
 ### Authorization
 

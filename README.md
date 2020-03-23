@@ -82,7 +82,7 @@ public class ArticlesApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://http:/v1*
+All URIs are relative to *http://http:/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -104,6 +104,7 @@ Class | Method | HTTP request | Description
  - [ArticleTypeDetails](docs/ArticleTypeDetails.md)
  - [Author](docs/Author.md)
  - [Block](docs/Block.md)
+ - [Category](docs/Category.md)
  - [EventType](docs/EventType.md)
  - [FactInfo](docs/FactInfo.md)
  - [ImageInfo](docs/ImageInfo.md)
