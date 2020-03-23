@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## categoriesGet
 
-> List&lt;CategoryHierarchy&gt; categoriesGet(paper)
+> List&lt;Object&gt; categoriesGet(paper)
 
 Read categories
 
@@ -23,7 +23,7 @@ Read categories
 CategoriesApi apiInstance = new CategoriesApi();
 String paper = null; // String | 
 try {
-    List<CategoryHierarchy> result = apiInstance.categoriesGet(paper);
+    List<Object> result = apiInstance.categoriesGet(paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CategoriesApi#categoriesGet");
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;CategoryHierarchy&gt;**](CategoryHierarchy.md)
+**List&lt;Object&gt;**
 
 ### Authorization
 

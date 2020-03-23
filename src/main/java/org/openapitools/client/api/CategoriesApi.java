@@ -23,7 +23,6 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.CategoryHierarchy;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -59,9 +58,9 @@ public class CategoriesApi {
   * Read categories
   * 
    * @param paper 
-   * @return List<CategoryHierarchy>
+   * @return List<Object>
   */
-  public List<CategoryHierarchy> categoriesGet (String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> categoriesGet (String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -92,7 +91,7 @@ public class CategoriesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<CategoryHierarchy>) ApiInvoker.deserialize(localVarResponse, "array", CategoryHierarchy.class);
+         return (List<Object>) ApiInvoker.deserialize(localVarResponse, "array", Object.class);
       } else {
          return null;
       }
@@ -118,7 +117,7 @@ public class CategoriesApi {
    * 
    * @param paper 
   */
-  public void categoriesGet (String paper, final Response.Listener<List<CategoryHierarchy>> responseListener, final Response.ErrorListener errorListener) {
+  public void categoriesGet (String paper, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -159,7 +158,7 @@ public class CategoriesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<CategoryHierarchy>) ApiInvoker.deserialize(localVarResponse,  "array", CategoryHierarchy.class));
+              responseListener.onResponse((List<Object>) ApiInvoker.deserialize(localVarResponse,  "array", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
