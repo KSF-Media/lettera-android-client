@@ -81,16 +81,20 @@ public class JsonUtil {
       return new TypeToken<List<Block>>(){}.getType();
     }
     
+    if ("BoxInfo".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BoxInfo>>(){}.getType();
+    }
+    
+    if ("BoxType".equalsIgnoreCase(className)) {
+      return new TypeToken<List<BoxType>>(){}.getType();
+    }
+    
     if ("Category".equalsIgnoreCase(className)) {
       return new TypeToken<List<Category>>(){}.getType();
     }
     
     if ("EventType".equalsIgnoreCase(className)) {
       return new TypeToken<List<EventType>>(){}.getType();
-    }
-    
-    if ("FactInfo".equalsIgnoreCase(className)) {
-      return new TypeToken<List<FactInfo>>(){}.getType();
     }
     
     if ("ImageInfo".equalsIgnoreCase(className)) {
@@ -143,16 +147,20 @@ public class JsonUtil {
       return new TypeToken<Block>(){}.getType();
     }
     
+    if ("BoxInfo".equalsIgnoreCase(className)) {
+      return new TypeToken<BoxInfo>(){}.getType();
+    }
+    
+    if ("BoxType".equalsIgnoreCase(className)) {
+      return new TypeToken<BoxType>(){}.getType();
+    }
+    
     if ("Category".equalsIgnoreCase(className)) {
       return new TypeToken<Category>(){}.getType();
     }
     
     if ("EventType".equalsIgnoreCase(className)) {
       return new TypeToken<EventType>(){}.getType();
-    }
-    
-    if ("FactInfo".equalsIgnoreCase(className)) {
-      return new TypeToken<FactInfo>(){}.getType();
     }
     
     if ("ImageInfo".equalsIgnoreCase(className)) {

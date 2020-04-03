@@ -12,7 +12,7 @@
 
 package org.openapitools.client.model;
 
-import org.openapitools.client.model.FactInfo;
+import org.openapitools.client.model.BoxInfo;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -26,8 +26,8 @@ public class Block {
   private String html = null;
   @SerializedName("image")
   private ImageInfo image = null;
-  @SerializedName("factBox")
-  private FactInfo factBox = null;
+  @SerializedName("box")
+  private BoxInfo box = null;
   @SerializedName("headline")
   private String headline = null;
   @SerializedName("footnote")
@@ -70,11 +70,11 @@ public class Block {
   /**
    **/
   @ApiModelProperty(value = "")
-  public FactInfo getFactBox() {
-    return factBox;
+  public BoxInfo getBox() {
+    return box;
   }
-  public void setFactBox(FactInfo factBox) {
-    this.factBox = factBox;
+  public void setBox(BoxInfo box) {
+    this.box = box;
   }
 
   /**
@@ -130,7 +130,7 @@ public class Block {
     return (this.paragraph == null ? block.paragraph == null : this.paragraph.equals(block.paragraph)) &&
         (this.html == null ? block.html == null : this.html.equals(block.html)) &&
         (this.image == null ? block.image == null : this.image.equals(block.image)) &&
-        (this.factBox == null ? block.factBox == null : this.factBox.equals(block.factBox)) &&
+        (this.box == null ? block.box == null : this.box.equals(block.box)) &&
         (this.headline == null ? block.headline == null : this.headline.equals(block.headline)) &&
         (this.footnote == null ? block.footnote == null : this.footnote.equals(block.footnote)) &&
         (this.question == null ? block.question == null : this.question.equals(block.question)) &&
@@ -143,7 +143,7 @@ public class Block {
     result = 31 * result + (this.paragraph == null ? 0: this.paragraph.hashCode());
     result = 31 * result + (this.html == null ? 0: this.html.hashCode());
     result = 31 * result + (this.image == null ? 0: this.image.hashCode());
-    result = 31 * result + (this.factBox == null ? 0: this.factBox.hashCode());
+    result = 31 * result + (this.box == null ? 0: this.box.hashCode());
     result = 31 * result + (this.headline == null ? 0: this.headline.hashCode());
     result = 31 * result + (this.footnote == null ? 0: this.footnote.hashCode());
     result = 31 * result + (this.question == null ? 0: this.question.hashCode());
@@ -159,7 +159,7 @@ public class Block {
     sb.append("  paragraph: ").append(paragraph).append("\n");
     sb.append("  html: ").append(html).append("\n");
     sb.append("  image: ").append(image).append("\n");
-    sb.append("  factBox: ").append(factBox).append("\n");
+    sb.append("  box: ").append(box).append("\n");
     sb.append("  headline: ").append(headline).append("\n");
     sb.append("  footnote: ").append(footnote).append("\n");
     sb.append("  question: ").append(question).append("\n");

@@ -13,16 +13,21 @@
 package org.openapitools.client.model;
 
 import java.util.*;
+import org.openapitools.client.model.BoxType;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 @ApiModel(description = "")
-public class FactInfo {
+public class BoxInfo {
   
   @SerializedName("title")
   private String title = null;
+  @SerializedName("headline")
+  private String headline = null;
   @SerializedName("content")
   private List<String> content = null;
+  @SerializedName("type")
+  private BoxType type = null;
 
   /**
    **/
@@ -36,12 +41,32 @@ public class FactInfo {
 
   /**
    **/
+  @ApiModelProperty(value = "")
+  public String getHeadline() {
+    return headline;
+  }
+  public void setHeadline(String headline) {
+    this.headline = headline;
+  }
+
+  /**
+   **/
   @ApiModelProperty(required = true, value = "")
   public List<String> getContent() {
     return content;
   }
   public void setContent(List<String> content) {
     this.content = content;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public BoxType getType() {
+    return type;
+  }
+  public void setType(BoxType type) {
+    this.type = type;
   }
 
 
@@ -53,26 +78,32 @@ public class FactInfo {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FactInfo factInfo = (FactInfo) o;
-    return (this.title == null ? factInfo.title == null : this.title.equals(factInfo.title)) &&
-        (this.content == null ? factInfo.content == null : this.content.equals(factInfo.content));
+    BoxInfo boxInfo = (BoxInfo) o;
+    return (this.title == null ? boxInfo.title == null : this.title.equals(boxInfo.title)) &&
+        (this.headline == null ? boxInfo.headline == null : this.headline.equals(boxInfo.headline)) &&
+        (this.content == null ? boxInfo.content == null : this.content.equals(boxInfo.content)) &&
+        (this.type == null ? boxInfo.type == null : this.type.equals(boxInfo.type));
   }
 
   @Override
   public int hashCode() {
     int result = 17;
     result = 31 * result + (this.title == null ? 0: this.title.hashCode());
+    result = 31 * result + (this.headline == null ? 0: this.headline.hashCode());
     result = 31 * result + (this.content == null ? 0: this.content.hashCode());
+    result = 31 * result + (this.type == null ? 0: this.type.hashCode());
     return result;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FactInfo {\n");
+    sb.append("class BoxInfo {\n");
     
     sb.append("  title: ").append(title).append("\n");
+    sb.append("  headline: ").append(headline).append("\n");
     sb.append("  content: ").append(content).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
