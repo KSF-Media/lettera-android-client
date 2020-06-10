@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **publishingTime** | **String** |  | 
 **premium** | **Boolean** |  | 
 **tags** | **List&lt;String&gt;** |  | 
+**articleTypeDetails** | [**ArticleTypeDetails**](ArticleTypeDetails.md) |  |  [optional]
 
 
 

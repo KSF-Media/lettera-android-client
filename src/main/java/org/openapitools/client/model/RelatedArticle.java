@@ -14,6 +14,7 @@ package org.openapitools.client.model;
 
 import java.util.*;
 import java.util.UUID;
+import org.openapitools.client.model.ArticleTypeDetails;
 import org.openapitools.client.model.ImageInfo;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -35,6 +36,8 @@ public class RelatedArticle {
   private Boolean premium = null;
   @SerializedName("tags")
   private List<String> tags = null;
+  @SerializedName("articleTypeDetails")
+  private ArticleTypeDetails articleTypeDetails = null;
 
   /**
    **/
@@ -106,6 +109,16 @@ public class RelatedArticle {
     this.tags = tags;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public ArticleTypeDetails getArticleTypeDetails() {
+    return articleTypeDetails;
+  }
+  public void setArticleTypeDetails(ArticleTypeDetails articleTypeDetails) {
+    this.articleTypeDetails = articleTypeDetails;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -122,7 +135,8 @@ public class RelatedArticle {
         (this.listImage == null ? relatedArticle.listImage == null : this.listImage.equals(relatedArticle.listImage)) &&
         (this.publishingTime == null ? relatedArticle.publishingTime == null : this.publishingTime.equals(relatedArticle.publishingTime)) &&
         (this.premium == null ? relatedArticle.premium == null : this.premium.equals(relatedArticle.premium)) &&
-        (this.tags == null ? relatedArticle.tags == null : this.tags.equals(relatedArticle.tags));
+        (this.tags == null ? relatedArticle.tags == null : this.tags.equals(relatedArticle.tags)) &&
+        (this.articleTypeDetails == null ? relatedArticle.articleTypeDetails == null : this.articleTypeDetails.equals(relatedArticle.articleTypeDetails));
   }
 
   @Override
@@ -135,6 +149,7 @@ public class RelatedArticle {
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
+    result = 31 * result + (this.articleTypeDetails == null ? 0: this.articleTypeDetails.hashCode());
     return result;
   }
 
@@ -150,6 +165,7 @@ public class RelatedArticle {
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
+    sb.append("  articleTypeDetails: ").append(articleTypeDetails).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
