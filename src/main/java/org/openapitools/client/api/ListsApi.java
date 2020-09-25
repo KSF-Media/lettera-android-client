@@ -315,9 +315,10 @@ public class ListsApi {
    * @param limit 
    * @param category 
    * @param paper 
+   * @param onlySubscribers 
    * @return List<ListArticle>
   */
-  public List<ListArticle> mostreadGet (Integer start, Integer limit, String category, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ListArticle> mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -333,6 +334,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "onlySubscribers", onlySubscribers));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -375,9 +377,9 @@ public class ListsApi {
       /**
    * Returns a list of most read articles
    * 
-   * @param start    * @param limit    * @param category    * @param paper 
+   * @param start    * @param limit    * @param category    * @param paper    * @param onlySubscribers 
   */
-  public void mostreadGet (Integer start, Integer limit, String category, String paper, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
+  public void mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers, final Response.Listener<List<ListArticle>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -395,6 +397,7 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "onlySubscribers", onlySubscribers));
 
 
     String[] contentTypes = {

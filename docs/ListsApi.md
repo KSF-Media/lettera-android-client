@@ -111,7 +111,7 @@ No authorization required
 
 ## mostreadGet
 
-> List&lt;ListArticle&gt; mostreadGet(start, limit, category, paper)
+> List&lt;ListArticle&gt; mostreadGet(start, limit, category, paper, onlySubscribers)
 
 Returns a list of most read articles
 
@@ -126,8 +126,9 @@ Integer start = null; // Integer |
 Integer limit = null; // Integer | 
 String category = null; // String | 
 String paper = null; // String | 
+Boolean onlySubscribers = null; // Boolean | 
 try {
-    List<ListArticle> result = apiInstance.mostreadGet(start, limit, category, paper);
+    List<ListArticle> result = apiInstance.mostreadGet(start, limit, category, paper, onlySubscribers);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#mostreadGet");
@@ -144,6 +145,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**|  | [optional] [default to null]
  **category** | **String**|  | [optional] [default to null]
  **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
+ **onlySubscribers** | **Boolean**|  | [optional] [default to null]
 
 ### Return type
 
