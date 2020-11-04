@@ -1,6 +1,6 @@
 
 
-# ListArticle
+# ArticleStub
 
 ## Properties
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **premium** | **Boolean** |  | 
 **publishingTime** | **String** |  | 
 **updateTime** | **String** |  |  [optional]
-**relatedArticles** | [**List&lt;RelatedArticle&gt;**](RelatedArticle.md) |  | 
+**relatedArticles** | [**List&lt;ArticleStub&gt;**](ArticleStub.md) |  |  [optional]
 **articleType** | [**ArticleType**](ArticleType.md) |  | 
 **articleTypeDetails** | [**ArticleTypeDetails**](ArticleTypeDetails.md) |  |  [optional]
 **paper** | [**Paper**](Paper.md) |  | 

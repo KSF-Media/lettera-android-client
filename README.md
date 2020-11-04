@@ -64,15 +64,15 @@ public class ArticlesApiExample {
 
     public static void main(String[] args) {
         ArticlesApi apiInstance = new ArticlesApi();
-        Integer start = null; // Integer | 
-        Integer limit = null; // Integer | 
-        String paper = null; // String | 
-        String contentQuery = null; // String | 
+        UUID uuid = null; // UUID | 
+        UUID authUser = null; // UUID | 
+        String authorization = null; // String | 
+        Boolean textonly = false; // Boolean | 
         try {
-            List<Article> result = apiInstance.articleSearchGet(start, limit, paper, contentQuery);
+            Article result = apiInstance.articleUuidGet(uuid, authUser, authorization, textonly);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ArticlesApi#articleSearchGet");
+            System.err.println("Exception when calling ArticlesApi#articleUuidGet");
             e.printStackTrace();
         }
     }
@@ -82,12 +82,12 @@ public class ArticlesApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://http:/v2*
+All URIs are relative to *http://http:/v3*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ArticlesApi* | [**articleSearchGet**](docs/ArticlesApi.md#articleSearchGet) | **GET** /article/search | 
 *ArticlesApi* | [**articleUuidGet**](docs/ArticlesApi.md#articleUuidGet) | **GET** /article/{uuid} | 
+*ArticlesApi* | [**articleUuidStubGet**](docs/ArticlesApi.md#articleUuidStubGet) | **GET** /article/{uuid}/stub | 
 *CategoriesApi* | [**categoriesGet**](docs/CategoriesApi.md#categoriesGet) | **GET** /categories | Read categories
 *ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
 *ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 
  - [Alignment](docs/Alignment.md)
  - [Article](docs/Article.md)
+ - [ArticleStub](docs/ArticleStub.md)
  - [ArticleType](docs/ArticleType.md)
  - [ArticleTypeDetails](docs/ArticleTypeDetails.md)
  - [Author](docs/Author.md)
@@ -109,10 +110,8 @@ Class | Method | HTTP request | Description
  - [Category](docs/Category.md)
  - [EventType](docs/EventType.md)
  - [ImageInfo](docs/ImageInfo.md)
- - [ListArticle](docs/ListArticle.md)
  - [Notification](docs/Notification.md)
  - [Paper](docs/Paper.md)
- - [RelatedArticle](docs/RelatedArticle.md)
 
 
 ## Documentation for Authorization

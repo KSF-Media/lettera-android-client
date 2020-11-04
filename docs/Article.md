@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **articleType** | [**ArticleType**](ArticleType.md) |  | 
 **articleTypeDetails** | [**ArticleTypeDetails**](ArticleTypeDetails.md) |  |  [optional]
 **externalScripts** | **List&lt;String&gt;** |  |  [optional]
-**relatedArticles** | [**List&lt;RelatedArticle&gt;**](RelatedArticle.md) |  | 
+**relatedArticles** | [**List&lt;ArticleStub&gt;**](ArticleStub.md) |  | 
 **shareUrl** | **String** |  |  [optional]
 **paper** | [**Paper**](Paper.md) |  | 
 **analyticsCategory** | **String** |  |  [optional]

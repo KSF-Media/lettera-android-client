@@ -1,6 +1,6 @@
 # ListsApi
 
-All URIs are relative to *http://http:/v2*
+All URIs are relative to *http://http:/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## frontpageGet
 
-> List&lt;ListArticle&gt; frontpageGet(start, limit, category, paper)
+> List&lt;ArticleStub&gt; frontpageGet(start, limit, category, paper)
 
 Returns a list for a front page
 
@@ -29,7 +29,7 @@ Integer limit = null; // Integer |
 String category = null; // String | 
 String paper = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.frontpageGet(start, limit, category, paper);
+    List<ArticleStub> result = apiInstance.frontpageGet(start, limit, category, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#frontpageGet");
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ListArticle&gt;**](ListArticle.md)
+[**List&lt;ArticleStub&gt;**](ArticleStub.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 
 ## latestGet
 
-> List&lt;ListArticle&gt; latestGet(start, limit, paper)
+> List&lt;ArticleStub&gt; latestGet(start, limit, paper)
 
 Returns a list of latest articles
 
@@ -78,7 +78,7 @@ Integer start = null; // Integer |
 Integer limit = null; // Integer | 
 String paper = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.latestGet(start, limit, paper);
+    List<ArticleStub> result = apiInstance.latestGet(start, limit, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#latestGet");
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ListArticle&gt;**](ListArticle.md)
+[**List&lt;ArticleStub&gt;**](ArticleStub.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ No authorization required
 
 ## mostreadGet
 
-> List&lt;ListArticle&gt; mostreadGet(start, limit, category, paper, onlySubscribers)
+> List&lt;ArticleStub&gt; mostreadGet(start, limit, category, paper, onlySubscribers)
 
 Returns a list of most read articles
 
@@ -128,7 +128,7 @@ String category = null; // String |
 String paper = null; // String | 
 Boolean onlySubscribers = null; // Boolean | 
 try {
-    List<ListArticle> result = apiInstance.mostreadGet(start, limit, category, paper, onlySubscribers);
+    List<ArticleStub> result = apiInstance.mostreadGet(start, limit, category, paper, onlySubscribers);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#mostreadGet");
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ListArticle&gt;**](ListArticle.md)
+[**List&lt;ArticleStub&gt;**](ArticleStub.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ No authorization required
 
 ## searchGet
 
-> List&lt;ListArticle&gt; searchGet(start, limit, paper, contentQuery)
+> List&lt;ArticleStub&gt; searchGet(start, limit, paper, contentQuery)
 
 Returns a list of search results
 
@@ -179,7 +179,7 @@ Integer limit = null; // Integer |
 String paper = null; // String | 
 String contentQuery = null; // String | 
 try {
-    List<ListArticle> result = apiInstance.searchGet(start, limit, paper, contentQuery);
+    List<ArticleStub> result = apiInstance.searchGet(start, limit, paper, contentQuery);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#searchGet");
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ListArticle&gt;**](ListArticle.md)
+[**List&lt;ArticleStub&gt;**](ArticleStub.md)
 
 ### Authorization
 
