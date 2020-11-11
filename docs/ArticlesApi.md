@@ -63,7 +63,7 @@ No authorization required
 
 ## articleUuidStubGet
 
-> ArticleStub articleUuidStubGet(uuid, authUser, authorization)
+> ArticleStub articleUuidStubGet(uuid)
 
 
 
@@ -77,10 +77,8 @@ Fetch an article stub by UUID
 
 ArticlesApi apiInstance = new ArticlesApi();
 UUID uuid = null; // UUID | 
-UUID authUser = null; // UUID | 
-String authorization = null; // String | 
 try {
-    ArticleStub result = apiInstance.articleUuidStubGet(uuid, authUser, authorization);
+    ArticleStub result = apiInstance.articleUuidStubGet(uuid);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArticlesApi#articleUuidStubGet");
@@ -94,8 +92,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**UUID**](.md)|  | [default to null]
- **authUser** | [**UUID**](.md)|  | [optional] [default to null]
- **authorization** | **String**|  | [optional] [default to null]
 
 ### Return type
 

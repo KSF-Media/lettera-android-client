@@ -197,11 +197,9 @@ public class ArticlesApi {
   * 
   * Fetch an article stub by UUID
    * @param uuid 
-   * @param authUser 
-   * @param authorization 
    * @return ArticleStub
   */
-  public ArticleStub articleUuidStubGet (UUID uuid, UUID authUser, String authorization) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ArticleStub articleUuidStubGet (UUID uuid) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'uuid' is set
     if (uuid == null) {
@@ -218,8 +216,6 @@ public class ArticlesApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
-    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
-    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -262,9 +258,9 @@ public class ArticlesApi {
       /**
    * 
    * Fetch an article stub by UUID
-   * @param uuid    * @param authUser    * @param authorization 
+   * @param uuid 
   */
-  public void articleUuidStubGet (UUID uuid, UUID authUser, String authorization, final Response.Listener<ArticleStub> responseListener, final Response.ErrorListener errorListener) {
+  public void articleUuidStubGet (UUID uuid, final Response.Listener<ArticleStub> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'uuid' is set
@@ -284,8 +280,6 @@ public class ArticlesApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
 
-    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
-    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
 
     String[] contentTypes = {
       
