@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uuid** | [**UUID**](UUID.md) |  | 
 **title** | **String** |  | 
+**listTitle** | **String** |  |  [optional]
 **authors** | [**List&lt;Author&gt;**](Author.md) |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **preamble** | **String** |  |  [optional]

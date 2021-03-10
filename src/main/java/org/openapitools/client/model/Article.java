@@ -31,6 +31,8 @@ public class Article {
   private UUID uuid = null;
   @SerializedName("title")
   private String title = null;
+  @SerializedName("listTitle")
+  private String listTitle = null;
   @SerializedName("authors")
   private List<Author> authors = null;
   @SerializedName("tags")
@@ -86,6 +88,16 @@ public class Article {
   }
   public void setTitle(String title) {
     this.title = title;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getListTitle() {
+    return listTitle;
+  }
+  public void setListTitle(String listTitle) {
+    this.listTitle = listTitle;
   }
 
   /**
@@ -282,6 +294,7 @@ public class Article {
     Article article = (Article) o;
     return (this.uuid == null ? article.uuid == null : this.uuid.equals(article.uuid)) &&
         (this.title == null ? article.title == null : this.title.equals(article.title)) &&
+        (this.listTitle == null ? article.listTitle == null : this.listTitle.equals(article.listTitle)) &&
         (this.authors == null ? article.authors == null : this.authors.equals(article.authors)) &&
         (this.tags == null ? article.tags == null : this.tags.equals(article.tags)) &&
         (this.preamble == null ? article.preamble == null : this.preamble.equals(article.preamble)) &&
@@ -307,6 +320,7 @@ public class Article {
     int result = 17;
     result = 31 * result + (this.uuid == null ? 0: this.uuid.hashCode());
     result = 31 * result + (this.title == null ? 0: this.title.hashCode());
+    result = 31 * result + (this.listTitle == null ? 0: this.listTitle.hashCode());
     result = 31 * result + (this.authors == null ? 0: this.authors.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
@@ -335,6 +349,7 @@ public class Article {
     
     sb.append("  uuid: ").append(uuid).append("\n");
     sb.append("  title: ").append(title).append("\n");
+    sb.append("  listTitle: ").append(listTitle).append("\n");
     sb.append("  authors: ").append(authors).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
