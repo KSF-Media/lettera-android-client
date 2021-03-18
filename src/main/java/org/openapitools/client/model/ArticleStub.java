@@ -53,6 +53,8 @@ public class ArticleStub {
   private Paper paper = null;
   @SerializedName("shareUrl")
   private String shareUrl = null;
+  @SerializedName("liveReporting")
+  private Boolean liveReporting = null;
 
   /**
    **/
@@ -194,6 +196,16 @@ public class ArticleStub {
     this.shareUrl = shareUrl;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public Boolean getLiveReporting() {
+    return liveReporting;
+  }
+  public void setLiveReporting(Boolean liveReporting) {
+    this.liveReporting = liveReporting;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -217,7 +229,8 @@ public class ArticleStub {
         (this.articleType == null ? articleStub.articleType == null : this.articleType.equals(articleStub.articleType)) &&
         (this.articleTypeDetails == null ? articleStub.articleTypeDetails == null : this.articleTypeDetails.equals(articleStub.articleTypeDetails)) &&
         (this.paper == null ? articleStub.paper == null : this.paper.equals(articleStub.paper)) &&
-        (this.shareUrl == null ? articleStub.shareUrl == null : this.shareUrl.equals(articleStub.shareUrl));
+        (this.shareUrl == null ? articleStub.shareUrl == null : this.shareUrl.equals(articleStub.shareUrl)) &&
+        (this.liveReporting == null ? articleStub.liveReporting == null : this.liveReporting.equals(articleStub.liveReporting));
   }
 
   @Override
@@ -237,6 +250,7 @@ public class ArticleStub {
     result = 31 * result + (this.articleTypeDetails == null ? 0: this.articleTypeDetails.hashCode());
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
+    result = 31 * result + (this.liveReporting == null ? 0: this.liveReporting.hashCode());
     return result;
   }
 
@@ -259,6 +273,7 @@ public class ArticleStub {
     sb.append("  articleTypeDetails: ").append(articleTypeDetails).append("\n");
     sb.append("  paper: ").append(paper).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
+    sb.append("  liveReporting: ").append(liveReporting).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
