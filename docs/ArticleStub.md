@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **paper** | [**Paper**](Paper.md) |  | 
 **shareUrl** | **String** |  |  [optional]
 **liveReporting** | **Boolean** |  | 
+**articlePriority** | **Integer** |  |  [optional]
 
 
 

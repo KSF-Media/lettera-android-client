@@ -55,6 +55,8 @@ public class ArticleStub {
   private String shareUrl = null;
   @SerializedName("liveReporting")
   private Boolean liveReporting = null;
+  @SerializedName("articlePriority")
+  private Integer articlePriority = null;
 
   /**
    **/
@@ -206,6 +208,18 @@ public class ArticleStub {
     this.liveReporting = liveReporting;
   }
 
+  /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getArticlePriority() {
+    return articlePriority;
+  }
+  public void setArticlePriority(Integer articlePriority) {
+    this.articlePriority = articlePriority;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -230,7 +244,8 @@ public class ArticleStub {
         (this.articleTypeDetails == null ? articleStub.articleTypeDetails == null : this.articleTypeDetails.equals(articleStub.articleTypeDetails)) &&
         (this.paper == null ? articleStub.paper == null : this.paper.equals(articleStub.paper)) &&
         (this.shareUrl == null ? articleStub.shareUrl == null : this.shareUrl.equals(articleStub.shareUrl)) &&
-        (this.liveReporting == null ? articleStub.liveReporting == null : this.liveReporting.equals(articleStub.liveReporting));
+        (this.liveReporting == null ? articleStub.liveReporting == null : this.liveReporting.equals(articleStub.liveReporting)) &&
+        (this.articlePriority == null ? articleStub.articlePriority == null : this.articlePriority.equals(articleStub.articlePriority));
   }
 
   @Override
@@ -251,6 +266,7 @@ public class ArticleStub {
     result = 31 * result + (this.paper == null ? 0: this.paper.hashCode());
     result = 31 * result + (this.shareUrl == null ? 0: this.shareUrl.hashCode());
     result = 31 * result + (this.liveReporting == null ? 0: this.liveReporting.hashCode());
+    result = 31 * result + (this.articlePriority == null ? 0: this.articlePriority.hashCode());
     return result;
   }
 
@@ -274,6 +290,7 @@ public class ArticleStub {
     sb.append("  paper: ").append(paper).append("\n");
     sb.append("  shareUrl: ").append(shareUrl).append("\n");
     sb.append("  liveReporting: ").append(liveReporting).append("\n");
+    sb.append("  articlePriority: ").append(articlePriority).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
