@@ -97,6 +97,10 @@ public class JsonUtil {
       return new TypeToken<List<Category>>(){}.getType();
     }
     
+    if ("Cutoff".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Cutoff>>(){}.getType();
+    }
+    
     if ("EventType".equalsIgnoreCase(className)) {
       return new TypeToken<List<EventType>>(){}.getType();
     }
@@ -111,6 +115,10 @@ public class JsonUtil {
     
     if ("Paper".equalsIgnoreCase(className)) {
       return new TypeToken<List<Paper>>(){}.getType();
+    }
+    
+    if ("Scoring".equalsIgnoreCase(className)) {
+      return new TypeToken<List<Scoring>>(){}.getType();
     }
     
     return new TypeToken<List<Object>>(){}.getType();
@@ -159,6 +167,10 @@ public class JsonUtil {
       return new TypeToken<Category>(){}.getType();
     }
     
+    if ("Cutoff".equalsIgnoreCase(className)) {
+      return new TypeToken<Cutoff>(){}.getType();
+    }
+    
     if ("EventType".equalsIgnoreCase(className)) {
       return new TypeToken<EventType>(){}.getType();
     }
@@ -173,6 +185,10 @@ public class JsonUtil {
     
     if ("Paper".equalsIgnoreCase(className)) {
       return new TypeToken<Paper>(){}.getType();
+    }
+    
+    if ("Scoring".equalsIgnoreCase(className)) {
+      return new TypeToken<Scoring>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

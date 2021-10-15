@@ -69,6 +69,8 @@ public class Article {
   private String analyticsSection = null;
   @SerializedName("articlePriority")
   private Integer articlePriority = null;
+  @SerializedName("articleTimeOnSite")
+  private Integer articleTimeOnSite = null;
 
   /**
    **/
@@ -282,6 +284,18 @@ public class Article {
     this.articlePriority = articlePriority;
   }
 
+  /**
+   * minimum: -9223372036854775808
+   * maximum: 9223372036854775807
+   **/
+  @ApiModelProperty(value = "")
+  public Integer getArticleTimeOnSite() {
+    return articleTimeOnSite;
+  }
+  public void setArticleTimeOnSite(Integer articleTimeOnSite) {
+    this.articleTimeOnSite = articleTimeOnSite;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -312,7 +326,8 @@ public class Article {
         (this.paper == null ? article.paper == null : this.paper.equals(article.paper)) &&
         (this.analyticsCategory == null ? article.analyticsCategory == null : this.analyticsCategory.equals(article.analyticsCategory)) &&
         (this.analyticsSection == null ? article.analyticsSection == null : this.analyticsSection.equals(article.analyticsSection)) &&
-        (this.articlePriority == null ? article.articlePriority == null : this.articlePriority.equals(article.articlePriority));
+        (this.articlePriority == null ? article.articlePriority == null : this.articlePriority.equals(article.articlePriority)) &&
+        (this.articleTimeOnSite == null ? article.articleTimeOnSite == null : this.articleTimeOnSite.equals(article.articleTimeOnSite));
   }
 
   @Override
@@ -339,6 +354,7 @@ public class Article {
     result = 31 * result + (this.analyticsCategory == null ? 0: this.analyticsCategory.hashCode());
     result = 31 * result + (this.analyticsSection == null ? 0: this.analyticsSection.hashCode());
     result = 31 * result + (this.articlePriority == null ? 0: this.articlePriority.hashCode());
+    result = 31 * result + (this.articleTimeOnSite == null ? 0: this.articleTimeOnSite.hashCode());
     return result;
   }
 
@@ -368,6 +384,7 @@ public class Article {
     sb.append("  analyticsCategory: ").append(analyticsCategory).append("\n");
     sb.append("  analyticsSection: ").append(analyticsSection).append("\n");
     sb.append("  articlePriority: ").append(articlePriority).append("\n");
+    sb.append("  articleTimeOnSite: ").append(articleTimeOnSite).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

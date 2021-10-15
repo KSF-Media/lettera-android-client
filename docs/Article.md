@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **analyticsCategory** | **String** |  |  [optional]
 **analyticsSection** | **String** |  |  [optional]
 **articlePriority** | **Integer** |  |  [optional]
+**articleTimeOnSite** | **Integer** |  |  [optional]
 
 
 

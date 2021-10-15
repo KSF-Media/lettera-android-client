@@ -24,6 +24,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import org.openapitools.client.model.ArticleStub;
+import org.openapitools.client.model.Scoring;
+import java.util.UUID;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -398,6 +400,651 @@ public class ListsApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "onlySubscribers", onlySubscribers));
+
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Load a preset model
+  * 
+   * @param authUser 
+   * @param authorization 
+   * @param preset 
+   * @param category 
+   * @return Scoring
+  */
+  public Scoring presetPresetCategoryGet (UUID authUser, String authorization, Integer preset, String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'authUser' is set
+    if (authUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authUser' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'authUser' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'authorization' is set
+    if (authorization == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authorization' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'authorization' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'preset' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'category' when calling presetPresetCategoryGet"));
+    }
+
+    // create path and map variables
+    String path = "/preset/{preset}/{category}".replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString())).replaceAll("\\{" + "category" + "\\}", apiInvoker.escapeString(category.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (Scoring) ApiInvoker.deserialize(localVarResponse, "", Scoring.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Load a preset model
+   * 
+   * @param authUser    * @param authorization    * @param preset    * @param category 
+  */
+  public void presetPresetCategoryGet (UUID authUser, String authorization, Integer preset, String category, final Response.Listener<Scoring> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'authUser' is set
+    if (authUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authUser' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'authUser' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'authorization' is set
+    if (authorization == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authorization' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'authorization' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'preset' when calling presetPresetCategoryGet"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling presetPresetCategoryGet",
+        new ApiException(400, "Missing the required parameter 'category' when calling presetPresetCategoryGet"));
+    }
+
+    // create path and map variables
+    String path = "/preset/{preset}/{category}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString())).replaceAll("\\{" + "category" + "\\}", apiInvoker.escapeString(category.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((Scoring) ApiInvoker.deserialize(localVarResponse,  "", Scoring.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * Update a preset model
+  * 
+   * @param authUser 
+   * @param authorization 
+   * @param preset 
+   * @param category 
+   * @param body 
+   * @return void
+  */
+  public void presetPresetCategoryPost (UUID authUser, String authorization, Integer preset, String category, Scoring body) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'authUser' is set
+    if (authUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authUser' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'authUser' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'authorization' is set
+    if (authorization == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authorization' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'authorization' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'preset' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'category' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling presetPresetCategoryPost"));
+    }
+
+    // create path and map variables
+    String path = "/preset/{preset}/{category}".replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString())).replaceAll("\\{" + "category" + "\\}", apiInvoker.escapeString(category.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return ;
+      } else {
+         return ;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Update a preset model
+   * 
+   * @param authUser    * @param authorization    * @param preset    * @param category    * @param body 
+  */
+  public void presetPresetCategoryPost (UUID authUser, String authorization, Integer preset, String category, Scoring body, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'authUser' is set
+    if (authUser == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authUser' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'authUser' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'authorization' is set
+    if (authorization == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'authorization' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'authorization' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'preset' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'category' when calling presetPresetCategoryPost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling presetPresetCategoryPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling presetPresetCategoryPost"));
+    }
+
+    // create path and map variables
+    String path = "/preset/{preset}/{category}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString())).replaceAll("\\{" + "category" + "\\}", apiInvoker.escapeString(category.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+
+    headerParams.put("AuthUser", ApiInvoker.parameterToString(authUser));
+    headerParams.put("Authorization", ApiInvoker.parameterToString(authorization));
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+              responseListener.onResponse(localVarResponse);
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * List recent articles sorted by given scoring weights
+  * 
+   * @param category 
+   * @param paper 
+   * @param body 
+   * @param start 
+   * @param limit 
+   * @return List<ArticleStub>
+  */
+  public List<ArticleStub> scoredPost (String category, String paper, Scoring body, Integer start, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = body;
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'category' when calling scoredPost"));
+    }
+    // verify the required parameter 'paper' is set
+    if (paper == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'paper' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'paper' when calling scoredPost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling scoredPost"));
+    }
+
+    // create path and map variables
+    String path = "/scored";
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * List recent articles sorted by given scoring weights
+   * 
+   * @param category    * @param paper    * @param body    * @param start    * @param limit 
+  */
+  public void scoredPost (String category, String paper, Scoring body, Integer start, Integer limit, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = body;
+
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'category' when calling scoredPost"));
+    }
+    // verify the required parameter 'paper' is set
+    if (paper == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'paper' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'paper' when calling scoredPost"));
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'body' when calling scoredPost",
+        new ApiException(400, "Missing the required parameter 'body' when calling scoredPost"));
+    }
+
+    // create path and map variables
+    String path = "/scored".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+
+
+    String[] contentTypes = {
+      "application/json;charset=utf-8"
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "POST", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
+  /**
+  * List recent articles sorted by preset scoring
+  * 
+   * @param preset 
+   * @param category 
+   * @param start 
+   * @param limit 
+   * @param paper 
+   * @return List<ArticleStub>
+  */
+  public List<ArticleStub> scoredPresetGet (Integer preset, String category, Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling scoredPresetGet",
+        new ApiException(400, "Missing the required parameter 'preset' when calling scoredPresetGet"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling scoredPresetGet",
+        new ApiException(400, "Missing the required parameter 'category' when calling scoredPresetGet"));
+    }
+
+    // create path and map variables
+    String path = "/scored/{preset}".replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * List recent articles sorted by preset scoring
+   * 
+   * @param preset    * @param category    * @param start    * @param limit    * @param paper 
+  */
+  public void scoredPresetGet (Integer preset, String category, Integer start, Integer limit, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'preset' is set
+    if (preset == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'preset' when calling scoredPresetGet",
+        new ApiException(400, "Missing the required parameter 'preset' when calling scoredPresetGet"));
+    }
+    // verify the required parameter 'category' is set
+    if (category == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'category' when calling scoredPresetGet",
+        new ApiException(400, "Missing the required parameter 'category' when calling scoredPresetGet"));
+    }
+
+    // create path and map variables
+    String path = "/scored/{preset}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "preset" + "\\}", apiInvoker.escapeString(preset.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
 
 
     String[] contentTypes = {

@@ -92,6 +92,10 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**frontpageGet**](docs/ListsApi.md#frontpageGet) | **GET** /frontpage | Returns a list for a front page
 *ListsApi* | [**latestGet**](docs/ListsApi.md#latestGet) | **GET** /latest | Returns a list of latest articles
 *ListsApi* | [**mostreadGet**](docs/ListsApi.md#mostreadGet) | **GET** /mostread | Returns a list of most read articles
+*ListsApi* | [**presetPresetCategoryGet**](docs/ListsApi.md#presetPresetCategoryGet) | **GET** /preset/{preset}/{category} | Load a preset model
+*ListsApi* | [**presetPresetCategoryPost**](docs/ListsApi.md#presetPresetCategoryPost) | **POST** /preset/{preset}/{category} | Update a preset model
+*ListsApi* | [**scoredPost**](docs/ListsApi.md#scoredPost) | **POST** /scored | List recent articles sorted by given scoring weights
+*ListsApi* | [**scoredPresetGet**](docs/ListsApi.md#scoredPresetGet) | **GET** /scored/{preset} | List recent articles sorted by preset scoring
 *ListsApi* | [**searchGet**](docs/ListsApi.md#searchGet) | **GET** /search | Returns a list of search results
 *NotifiersApi* | [**notifyPost**](docs/NotifiersApi.md#notifyPost) | **POST** /notify | Listens to OC Notifier
 
@@ -108,10 +112,12 @@ Class | Method | HTTP request | Description
  - [BoxInfo](docs/BoxInfo.md)
  - [BoxType](docs/BoxType.md)
  - [Category](docs/Category.md)
+ - [Cutoff](docs/Cutoff.md)
  - [EventType](docs/EventType.md)
  - [ImageInfo](docs/ImageInfo.md)
  - [Notification](docs/Notification.md)
  - [Paper](docs/Paper.md)
+ - [Scoring](docs/Scoring.md)
 
 
 ## Documentation for Authorization
