@@ -22,6 +22,8 @@ public class Author {
   private String byline = null;
   @SerializedName("image")
   private String image = null;
+  @SerializedName("email")
+  private String email = null;
 
   /**
    **/
@@ -43,6 +45,16 @@ public class Author {
     this.image = image;
   }
 
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -54,7 +66,8 @@ public class Author {
     }
     Author author = (Author) o;
     return (this.byline == null ? author.byline == null : this.byline.equals(author.byline)) &&
-        (this.image == null ? author.image == null : this.image.equals(author.image));
+        (this.image == null ? author.image == null : this.image.equals(author.image)) &&
+        (this.email == null ? author.email == null : this.email.equals(author.email));
   }
 
   @Override
@@ -62,6 +75,7 @@ public class Author {
     int result = 17;
     result = 31 * result + (this.byline == null ? 0: this.byline.hashCode());
     result = 31 * result + (this.image == null ? 0: this.image.hashCode());
+    result = 31 * result + (this.email == null ? 0: this.email.hashCode());
     return result;
   }
 
@@ -72,6 +86,7 @@ public class Author {
     
     sb.append("  byline: ").append(byline).append("\n");
     sb.append("  image: ").append(image).append("\n");
+    sb.append("  email: ").append(email).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
