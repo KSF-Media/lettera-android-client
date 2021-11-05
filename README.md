@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**scoredPost**](docs/ListsApi.md#scoredPost) | **POST** /scored | List recent articles sorted by given scoring weights
 *ListsApi* | [**scoredPresetGet**](docs/ListsApi.md#scoredPresetGet) | **GET** /scored/{preset} | List recent articles sorted by preset scoring
 *ListsApi* | [**searchGet**](docs/ListsApi.md#searchGet) | **GET** /search | Returns a list of search results
+*ListsApi* | [**tagTagGet**](docs/ListsApi.md#tagTagGet) | **GET** /tag/{tag} | Returns a list of latest articles by tag
 *NotifiersApi* | [**notifyPost**](docs/NotifiersApi.md#notifyPost) | **POST** /notify | Listens to OC Notifier
 
 

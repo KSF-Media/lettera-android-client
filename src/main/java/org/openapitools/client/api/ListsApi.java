@@ -1214,4 +1214,140 @@ public class ListsApi {
       errorListener.onErrorResponse(new VolleyError(ex));
     }
   }
+  /**
+  * Returns a list of latest articles by tag
+  * 
+   * @param tag 
+   * @param start 
+   * @param limit 
+   * @param paper 
+   * @return List<ArticleStub>
+  */
+  public List<ArticleStub> tagTagGet (String tag, Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+    Object postBody = null;
+    // verify the required parameter 'tag' is set
+    if (tag == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling tagTagGet",
+        new ApiException(400, "Missing the required parameter 'tag' when calling tagTagGet"));
+    }
+
+    // create path and map variables
+    String path = "/tag/{tag}".replaceAll("\\{" + "tag" + "\\}", apiInvoker.escapeString(tag.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+    String[] contentTypes = {
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+    }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
+      if (localVarResponse != null) {
+         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+      } else {
+         return null;
+      }
+    } catch (ApiException ex) {
+       throw ex;
+    } catch (InterruptedException ex) {
+       throw ex;
+    } catch (ExecutionException ex) {
+      if (ex.getCause() instanceof VolleyError) {
+        VolleyError volleyError = (VolleyError)ex.getCause();
+        if (volleyError.networkResponse != null) {
+          throw new ApiException(volleyError.networkResponse.statusCode, volleyError.getMessage());
+        }
+      }
+      throw ex;
+    } catch (TimeoutException ex) {
+      throw ex;
+    }
+  }
+
+      /**
+   * Returns a list of latest articles by tag
+   * 
+   * @param tag    * @param start    * @param limit    * @param paper 
+  */
+  public void tagTagGet (String tag, Integer start, Integer limit, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+    Object postBody = null;
+
+    // verify the required parameter 'tag' is set
+    if (tag == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'tag' when calling tagTagGet",
+        new ApiException(400, "Missing the required parameter 'tag' when calling tagTagGet"));
+    }
+
+    // create path and map variables
+    String path = "/tag/{tag}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "tag" + "\\}", apiInvoker.escapeString(tag.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    // header params
+    Map<String, String> headerParams = new HashMap<String, String>();
+    // form params
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
+
+
+    String[] contentTypes = {
+      
+    };
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    if (contentType.startsWith("multipart/form-data")) {
+      // file uploading
+      MultipartEntityBuilder localVarBuilder = MultipartEntityBuilder.create();
+      
+
+      HttpEntity httpEntity = localVarBuilder.build();
+      postBody = httpEntity;
+    } else {
+      // normal form params
+          }
+
+    String[] authNames = new String[] {  };
+
+    try {
+      apiInvoker.invokeAPI(basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames,
+        new Response.Listener<String>() {
+          @Override
+          public void onResponse(String localVarResponse) {
+            try {
+              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+            } catch (ApiException exception) {
+               errorListener.onErrorResponse(new VolleyError(exception));
+            }
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+            errorListener.onErrorResponse(error);
+          }
+      });
+    } catch (ApiException ex) {
+      errorListener.onErrorResponse(new VolleyError(ex));
+    }
+  }
 }

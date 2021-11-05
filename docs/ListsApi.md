@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**scoredPost**](ListsApi.md#scoredPost) | **POST** /scored | List recent articles sorted by given scoring weights
 [**scoredPresetGet**](ListsApi.md#scoredPresetGet) | **GET** /scored/{preset} | List recent articles sorted by preset scoring
 [**searchGet**](ListsApi.md#searchGet) | **GET** /search | Returns a list of search results
+[**tagTagGet**](ListsApi.md#tagTagGet) | **GET** /tag/{tag} | Returns a list of latest articles by tag
 
 
 
@@ -405,6 +406,56 @@ Name | Type | Description  | Notes
  **limit** | **Integer**|  | [optional] [default to null]
  **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
  **contentQuery** | **String**|  | [optional] [default to null]
+
+### Return type
+
+[**List&lt;ArticleStub&gt;**](ArticleStub.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+
+## tagTagGet
+
+> List&lt;ArticleStub&gt; tagTagGet(tag, start, limit, paper)
+
+Returns a list of latest articles by tag
+
+### Example
+
+```java
+// Import classes:
+//import org.openapitools.client.api.ListsApi;
+
+ListsApi apiInstance = new ListsApi();
+String tag = null; // String | 
+Integer start = null; // Integer | 
+Integer limit = null; // Integer | 
+String paper = null; // String | 
+try {
+    List<ArticleStub> result = apiInstance.tagTagGet(tag, start, limit, paper);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ListsApi#tagTagGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tag** | **String**|  | [default to null]
+ **start** | **Integer**|  | [optional] [default to null]
+ **limit** | **Integer**|  | [optional] [default to null]
+ **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
 
 ### Return type
 
