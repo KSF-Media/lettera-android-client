@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **authors** | [**List&lt;Author&gt;**](Author.md) |  | 
 **tags** | **List&lt;String&gt;** |  | 
 **preamble** | **String** |  |  [optional]
+**mainImage** | [**ImageInfo**](ImageInfo.md) |  |  [optional]
 **listImage** | [**ImageInfo**](ImageInfo.md) |  |  [optional]
 **premium** | **Boolean** |  | 
 **publishingTime** | **String** |  | 

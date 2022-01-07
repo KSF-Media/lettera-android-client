@@ -37,6 +37,8 @@ public class ArticleStub {
   private List<String> tags = null;
   @SerializedName("preamble")
   private String preamble = null;
+  @SerializedName("mainImage")
+  private ImageInfo mainImage = null;
   @SerializedName("listImage")
   private ImageInfo listImage = null;
   @SerializedName("premium")
@@ -118,6 +120,16 @@ public class ArticleStub {
   }
   public void setPreamble(String preamble) {
     this.preamble = preamble;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public ImageInfo getMainImage() {
+    return mainImage;
+  }
+  public void setMainImage(ImageInfo mainImage) {
+    this.mainImage = mainImage;
   }
 
   /**
@@ -248,6 +260,7 @@ public class ArticleStub {
         (this.authors == null ? articleStub.authors == null : this.authors.equals(articleStub.authors)) &&
         (this.tags == null ? articleStub.tags == null : this.tags.equals(articleStub.tags)) &&
         (this.preamble == null ? articleStub.preamble == null : this.preamble.equals(articleStub.preamble)) &&
+        (this.mainImage == null ? articleStub.mainImage == null : this.mainImage.equals(articleStub.mainImage)) &&
         (this.listImage == null ? articleStub.listImage == null : this.listImage.equals(articleStub.listImage)) &&
         (this.premium == null ? articleStub.premium == null : this.premium.equals(articleStub.premium)) &&
         (this.publishingTime == null ? articleStub.publishingTime == null : this.publishingTime.equals(articleStub.publishingTime)) &&
@@ -270,6 +283,7 @@ public class ArticleStub {
     result = 31 * result + (this.authors == null ? 0: this.authors.hashCode());
     result = 31 * result + (this.tags == null ? 0: this.tags.hashCode());
     result = 31 * result + (this.preamble == null ? 0: this.preamble.hashCode());
+    result = 31 * result + (this.mainImage == null ? 0: this.mainImage.hashCode());
     result = 31 * result + (this.listImage == null ? 0: this.listImage.hashCode());
     result = 31 * result + (this.premium == null ? 0: this.premium.hashCode());
     result = 31 * result + (this.publishingTime == null ? 0: this.publishingTime.hashCode());
@@ -295,6 +309,7 @@ public class ArticleStub {
     sb.append("  authors: ").append(authors).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
     sb.append("  preamble: ").append(preamble).append("\n");
+    sb.append("  mainImage: ").append(mainImage).append("\n");
     sb.append("  listImage: ").append(listImage).append("\n");
     sb.append("  premium: ").append(premium).append("\n");
     sb.append("  publishingTime: ").append(publishingTime).append("\n");
