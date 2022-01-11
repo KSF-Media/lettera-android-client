@@ -12,6 +12,7 @@
 
 package org.openapitools.client.model;
 
+import java.util.*;
 import org.openapitools.client.model.Alignment;
 import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
@@ -29,6 +30,8 @@ public class ImageInfo {
   private Alignment alignment = null;
   @SerializedName("byline")
   private String byline = null;
+  @SerializedName("classes")
+  private List<String> classes = null;
 
   /**
    **/
@@ -80,6 +83,16 @@ public class ImageInfo {
     this.byline = byline;
   }
 
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public List<String> getClasses() {
+    return classes;
+  }
+  public void setClasses(List<String> classes) {
+    this.classes = classes;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -94,7 +107,8 @@ public class ImageInfo {
         (this.thumb == null ? imageInfo.thumb == null : this.thumb.equals(imageInfo.thumb)) &&
         (this.caption == null ? imageInfo.caption == null : this.caption.equals(imageInfo.caption)) &&
         (this.alignment == null ? imageInfo.alignment == null : this.alignment.equals(imageInfo.alignment)) &&
-        (this.byline == null ? imageInfo.byline == null : this.byline.equals(imageInfo.byline));
+        (this.byline == null ? imageInfo.byline == null : this.byline.equals(imageInfo.byline)) &&
+        (this.classes == null ? imageInfo.classes == null : this.classes.equals(imageInfo.classes));
   }
 
   @Override
@@ -105,6 +119,7 @@ public class ImageInfo {
     result = 31 * result + (this.caption == null ? 0: this.caption.hashCode());
     result = 31 * result + (this.alignment == null ? 0: this.alignment.hashCode());
     result = 31 * result + (this.byline == null ? 0: this.byline.hashCode());
+    result = 31 * result + (this.classes == null ? 0: this.classes.hashCode());
     return result;
   }
 
@@ -118,6 +133,7 @@ public class ImageInfo {
     sb.append("  caption: ").append(caption).append("\n");
     sb.append("  alignment: ").append(alignment).append("\n");
     sb.append("  byline: ").append(byline).append("\n");
+    sb.append("  classes: ").append(classes).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

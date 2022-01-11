@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **caption** | **String** |  |  [optional]
 **alignment** | [**Alignment**](Alignment.md) |  |  [optional]
 **byline** | **String** |  |  [optional]
+**classes** | **List&lt;String&gt;** |  | 
 
 
 
