@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## frontpageGet
 
-> List&lt;ArticleStub&gt; frontpageGet(start, limit, category, paper)
+> Object frontpageGet(start, limit, category, paper)
 
 Returns a list for a front page
 
@@ -34,7 +34,7 @@ Integer limit = null; // Integer |
 String category = null; // String | 
 String paper = null; // String | 
 try {
-    List<ArticleStub> result = apiInstance.frontpageGet(start, limit, category, paper);
+    Object result = apiInstance.frontpageGet(start, limit, category, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#frontpageGet");
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
+**Object**
 
 ### Authorization
 
@@ -63,12 +63,12 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8, application/rss+xml
 
 
 ## latestGet
 
-> List&lt;ArticleStub&gt; latestGet(start, limit, paper)
+> Object latestGet(start, limit, paper)
 
 Returns a list of latest articles
 
@@ -83,7 +83,7 @@ Integer start = null; // Integer |
 Integer limit = null; // Integer | 
 String paper = null; // String | 
 try {
-    List<ArticleStub> result = apiInstance.latestGet(start, limit, paper);
+    Object result = apiInstance.latestGet(start, limit, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#latestGet");
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
+**Object**
 
 ### Authorization
 
@@ -111,7 +111,7 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8, application/rss+xml
 
 
 ## mostreadGet
@@ -423,7 +423,7 @@ No authorization required
 
 ## tagTagGet
 
-> List&lt;ArticleStub&gt; tagTagGet(tag, start, limit, paper)
+> Object tagTagGet(tag, start, limit, paper)
 
 Returns a list of latest articles by tag
 
@@ -439,7 +439,7 @@ Integer start = null; // Integer |
 Integer limit = null; // Integer | 
 String paper = null; // String | 
 try {
-    List<ArticleStub> result = apiInstance.tagTagGet(tag, start, limit, paper);
+    Object result = apiInstance.tagTagGet(tag, start, limit, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#tagTagGet");
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
+**Object**
 
 ### Authorization
 
@@ -468,5 +468,5 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8, application/rss+xml
 

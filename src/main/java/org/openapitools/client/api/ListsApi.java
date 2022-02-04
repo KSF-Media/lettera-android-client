@@ -64,9 +64,9 @@ public class ListsApi {
    * @param limit 
    * @param category 
    * @param paper 
-   * @return List<ArticleStub>
+   * @return Object
   */
-  public List<ArticleStub> frontpageGet (Integer start, Integer limit, String category, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object frontpageGet (Integer start, Integer limit, String category, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -100,7 +100,7 @@ public class ListsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -126,7 +126,7 @@ public class ListsApi {
    * 
    * @param start    * @param limit    * @param category    * @param paper 
   */
-  public void frontpageGet (Integer start, Integer limit, String category, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+  public void frontpageGet (Integer start, Integer limit, String category, String paper, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -170,7 +170,7 @@ public class ListsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -191,9 +191,9 @@ public class ListsApi {
    * @param start 
    * @param limit 
    * @param paper 
-   * @return List<ArticleStub>
+   * @return Object
   */
-  public List<ArticleStub> latestGet (Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object latestGet (Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -226,7 +226,7 @@ public class ListsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -252,7 +252,7 @@ public class ListsApi {
    * 
    * @param start    * @param limit    * @param paper 
   */
-  public void latestGet (Integer start, Integer limit, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+  public void latestGet (Integer start, Integer limit, String paper, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -295,7 +295,7 @@ public class ListsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -1221,9 +1221,9 @@ public class ListsApi {
    * @param start 
    * @param limit 
    * @param paper 
-   * @return List<ArticleStub>
+   * @return Object
   */
-  public List<ArticleStub> tagTagGet (String tag, Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object tagTagGet (String tag, Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'tag' is set
     if (tag == null) {
@@ -1261,7 +1261,7 @@ public class ListsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -1287,7 +1287,7 @@ public class ListsApi {
    * 
    * @param tag    * @param start    * @param limit    * @param paper 
   */
-  public void tagTagGet (String tag, Integer start, Integer limit, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+  public void tagTagGet (String tag, Integer start, Integer limit, String paper, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'tag' is set
@@ -1335,7 +1335,7 @@ public class ListsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
