@@ -116,7 +116,7 @@ No authorization required
 
 ## mostreadGet
 
-> List&lt;ArticleStub&gt; mostreadGet(start, limit, category, paper, onlySubscribers)
+> Object mostreadGet(start, limit, category, paper, onlySubscribers)
 
 Returns a list of most read articles
 
@@ -133,7 +133,7 @@ String category = null; // String |
 String paper = null; // String | 
 Boolean onlySubscribers = null; // Boolean | 
 try {
-    List<ArticleStub> result = apiInstance.mostreadGet(start, limit, category, paper, onlySubscribers);
+    Object result = apiInstance.mostreadGet(start, limit, category, paper, onlySubscribers);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#mostreadGet");
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
+**Object**
 
 ### Authorization
 

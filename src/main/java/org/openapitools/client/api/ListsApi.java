@@ -318,9 +318,9 @@ public class ListsApi {
    * @param category 
    * @param paper 
    * @param onlySubscribers 
-   * @return List<ArticleStub>
+   * @return Object
   */
-  public List<ArticleStub> mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -355,7 +355,7 @@ public class ListsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<ArticleStub>) ApiInvoker.deserialize(localVarResponse, "array", ArticleStub.class);
+         return (Object) ApiInvoker.deserialize(localVarResponse, "", Object.class);
       } else {
          return null;
       }
@@ -381,7 +381,7 @@ public class ListsApi {
    * 
    * @param start    * @param limit    * @param category    * @param paper    * @param onlySubscribers 
   */
-  public void mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+  public void mostreadGet (Integer start, Integer limit, String category, String paper, Boolean onlySubscribers, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -426,7 +426,7 @@ public class ListsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<ArticleStub>) ApiInvoker.deserialize(localVarResponse,  "array", ArticleStub.class));
+              responseListener.onResponse((Object) ApiInvoker.deserialize(localVarResponse,  "", Object.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
