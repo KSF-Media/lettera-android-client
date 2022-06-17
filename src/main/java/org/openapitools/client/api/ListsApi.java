@@ -1092,14 +1092,19 @@ public class ListsApi {
   /**
   * Returns a list of search results
   * 
+   * @param contentQuery 
    * @param start 
    * @param limit 
    * @param paper 
-   * @param contentQuery 
    * @return List<ArticleStub>
   */
-  public List<ArticleStub> searchGet (Integer start, Integer limit, String paper, String contentQuery) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ArticleStub> searchGet (String contentQuery, Integer start, Integer limit, String paper) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
+    // verify the required parameter 'contentQuery' is set
+    if (contentQuery == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'contentQuery' when calling searchGet",
+        new ApiException(400, "Missing the required parameter 'contentQuery' when calling searchGet"));
+    }
 
     // create path and map variables
     String path = "/search";
@@ -1156,11 +1161,16 @@ public class ListsApi {
       /**
    * Returns a list of search results
    * 
-   * @param start    * @param limit    * @param paper    * @param contentQuery 
+   * @param contentQuery    * @param start    * @param limit    * @param paper 
   */
-  public void searchGet (Integer start, Integer limit, String paper, String contentQuery, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
+  public void searchGet (String contentQuery, Integer start, Integer limit, String paper, final Response.Listener<List<ArticleStub>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
+    // verify the required parameter 'contentQuery' is set
+    if (contentQuery == null) {
+      VolleyError error = new VolleyError("Missing the required parameter 'contentQuery' when calling searchGet",
+        new ApiException(400, "Missing the required parameter 'contentQuery' when calling searchGet"));
+    }
 
     // create path and map variables
     String path = "/search".replaceAll("\\{format\\}","json");

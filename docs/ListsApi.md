@@ -375,7 +375,7 @@ No authorization required
 
 ## searchGet
 
-> List&lt;ArticleStub&gt; searchGet(start, limit, paper, contentQuery)
+> List&lt;ArticleStub&gt; searchGet(contentQuery, start, limit, paper)
 
 Returns a list of search results
 
@@ -386,12 +386,12 @@ Returns a list of search results
 //import org.openapitools.client.api.ListsApi;
 
 ListsApi apiInstance = new ListsApi();
+String contentQuery = null; // String | 
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
 String paper = null; // String | 
-String contentQuery = null; // String | 
 try {
-    List<ArticleStub> result = apiInstance.searchGet(start, limit, paper, contentQuery);
+    List<ArticleStub> result = apiInstance.searchGet(contentQuery, start, limit, paper);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#searchGet");
@@ -404,10 +404,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **contentQuery** | **String**|  | [default to null]
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
  **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
- **contentQuery** | **String**|  | [optional] [default to null]
 
 ### Return type
 
