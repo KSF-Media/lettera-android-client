@@ -101,16 +101,8 @@ public class JsonUtil {
       return new TypeToken<List<Cutoff>>(){}.getType();
     }
     
-    if ("EventType".equalsIgnoreCase(className)) {
-      return new TypeToken<List<EventType>>(){}.getType();
-    }
-    
     if ("ImageInfo".equalsIgnoreCase(className)) {
       return new TypeToken<List<ImageInfo>>(){}.getType();
-    }
-    
-    if ("Notification".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Notification>>(){}.getType();
     }
     
     if ("Paper".equalsIgnoreCase(className)) {
@@ -171,16 +163,8 @@ public class JsonUtil {
       return new TypeToken<Cutoff>(){}.getType();
     }
     
-    if ("EventType".equalsIgnoreCase(className)) {
-      return new TypeToken<EventType>(){}.getType();
-    }
-    
     if ("ImageInfo".equalsIgnoreCase(className)) {
       return new TypeToken<ImageInfo>(){}.getType();
-    }
-    
-    if ("Notification".equalsIgnoreCase(className)) {
-      return new TypeToken<Notification>(){}.getType();
     }
     
     if ("Paper".equalsIgnoreCase(className)) {

@@ -99,7 +99,6 @@ Class | Method | HTTP request | Description
 *ListsApi* | [**scoredPresetGet**](docs/ListsApi.md#scoredPresetGet) | **GET** /scored/{preset} | List recent articles sorted by preset scoring
 *ListsApi* | [**searchGet**](docs/ListsApi.md#searchGet) | **GET** /search | Returns a list of search results
 *ListsApi* | [**tagTagGet**](docs/ListsApi.md#tagTagGet) | **GET** /tag/{tag} | Returns a list of latest articles by tag
-*NotifiersApi* | [**notifyPost**](docs/NotifiersApi.md#notifyPost) | **POST** /notify | Listens to OC Notifier
 
 
 ## Documentation for Models
@@ -115,9 +114,7 @@ Class | Method | HTTP request | Description
  - [BoxType](docs/BoxType.md)
  - [Category](docs/Category.md)
  - [Cutoff](docs/Cutoff.md)
- - [EventType](docs/EventType.md)
  - [ImageInfo](docs/ImageInfo.md)
- - [Notification](docs/Notification.md)
  - [Paper](docs/Paper.md)
  - [Scoring](docs/Scoring.md)
 
