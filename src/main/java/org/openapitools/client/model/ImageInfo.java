@@ -24,6 +24,8 @@ public class ImageInfo {
   private String url = null;
   @SerializedName("thumb")
   private String thumb = null;
+  @SerializedName("tinyThumb")
+  private String tinyThumb = null;
   @SerializedName("thumbSize")
   private Integer thumbSize = null;
   @SerializedName("caption")
@@ -53,6 +55,16 @@ public class ImageInfo {
   }
   public void setThumb(String thumb) {
     this.thumb = thumb;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(required = true, value = "")
+  public String getTinyThumb() {
+    return tinyThumb;
+  }
+  public void setTinyThumb(String tinyThumb) {
+    this.tinyThumb = tinyThumb;
   }
 
   /**
@@ -119,6 +131,7 @@ public class ImageInfo {
     ImageInfo imageInfo = (ImageInfo) o;
     return (this.url == null ? imageInfo.url == null : this.url.equals(imageInfo.url)) &&
         (this.thumb == null ? imageInfo.thumb == null : this.thumb.equals(imageInfo.thumb)) &&
+        (this.tinyThumb == null ? imageInfo.tinyThumb == null : this.tinyThumb.equals(imageInfo.tinyThumb)) &&
         (this.thumbSize == null ? imageInfo.thumbSize == null : this.thumbSize.equals(imageInfo.thumbSize)) &&
         (this.caption == null ? imageInfo.caption == null : this.caption.equals(imageInfo.caption)) &&
         (this.alignment == null ? imageInfo.alignment == null : this.alignment.equals(imageInfo.alignment)) &&
@@ -131,6 +144,7 @@ public class ImageInfo {
     int result = 17;
     result = 31 * result + (this.url == null ? 0: this.url.hashCode());
     result = 31 * result + (this.thumb == null ? 0: this.thumb.hashCode());
+    result = 31 * result + (this.tinyThumb == null ? 0: this.tinyThumb.hashCode());
     result = 31 * result + (this.thumbSize == null ? 0: this.thumbSize.hashCode());
     result = 31 * result + (this.caption == null ? 0: this.caption.hashCode());
     result = 31 * result + (this.alignment == null ? 0: this.alignment.hashCode());
@@ -146,6 +160,7 @@ public class ImageInfo {
     
     sb.append("  url: ").append(url).append("\n");
     sb.append("  thumb: ").append(thumb).append("\n");
+    sb.append("  tinyThumb: ").append(tinyThumb).append("\n");
     sb.append("  thumbSize: ").append(thumbSize).append("\n");
     sb.append("  caption: ").append(caption).append("\n");
     sb.append("  alignment: ").append(alignment).append("\n");
