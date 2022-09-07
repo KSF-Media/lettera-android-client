@@ -28,6 +28,8 @@ public class ImageInfo {
   private String tinyThumb = null;
   @SerializedName("thumbSize")
   private Integer thumbSize = null;
+  @SerializedName("aoiCropped")
+  private String aoiCropped = null;
   @SerializedName("caption")
   private String caption = null;
   @SerializedName("alignment")
@@ -77,6 +79,16 @@ public class ImageInfo {
   }
   public void setThumbSize(Integer thumbSize) {
     this.thumbSize = thumbSize;
+  }
+
+  /**
+   **/
+  @ApiModelProperty(value = "")
+  public String getAoiCropped() {
+    return aoiCropped;
+  }
+  public void setAoiCropped(String aoiCropped) {
+    this.aoiCropped = aoiCropped;
   }
 
   /**
@@ -133,6 +145,7 @@ public class ImageInfo {
         (this.thumb == null ? imageInfo.thumb == null : this.thumb.equals(imageInfo.thumb)) &&
         (this.tinyThumb == null ? imageInfo.tinyThumb == null : this.tinyThumb.equals(imageInfo.tinyThumb)) &&
         (this.thumbSize == null ? imageInfo.thumbSize == null : this.thumbSize.equals(imageInfo.thumbSize)) &&
+        (this.aoiCropped == null ? imageInfo.aoiCropped == null : this.aoiCropped.equals(imageInfo.aoiCropped)) &&
         (this.caption == null ? imageInfo.caption == null : this.caption.equals(imageInfo.caption)) &&
         (this.alignment == null ? imageInfo.alignment == null : this.alignment.equals(imageInfo.alignment)) &&
         (this.byline == null ? imageInfo.byline == null : this.byline.equals(imageInfo.byline)) &&
@@ -146,6 +159,7 @@ public class ImageInfo {
     result = 31 * result + (this.thumb == null ? 0: this.thumb.hashCode());
     result = 31 * result + (this.tinyThumb == null ? 0: this.tinyThumb.hashCode());
     result = 31 * result + (this.thumbSize == null ? 0: this.thumbSize.hashCode());
+    result = 31 * result + (this.aoiCropped == null ? 0: this.aoiCropped.hashCode());
     result = 31 * result + (this.caption == null ? 0: this.caption.hashCode());
     result = 31 * result + (this.alignment == null ? 0: this.alignment.hashCode());
     result = 31 * result + (this.byline == null ? 0: this.byline.hashCode());
@@ -162,6 +176,7 @@ public class ImageInfo {
     sb.append("  thumb: ").append(thumb).append("\n");
     sb.append("  tinyThumb: ").append(tinyThumb).append("\n");
     sb.append("  thumbSize: ").append(thumbSize).append("\n");
+    sb.append("  aoiCropped: ").append(aoiCropped).append("\n");
     sb.append("  caption: ").append(caption).append("\n");
     sb.append("  alignment: ").append(alignment).append("\n");
     sb.append("  byline: ").append(byline).append("\n");
