@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **analyticsSection** | **String** |  |  [optional]
 **articlePriority** | **Integer** |  |  [optional]
 **articleTimeOnSite** | **Integer** |  |  [optional]
+**removeAds** | **Boolean** |  | 
 
 
 
