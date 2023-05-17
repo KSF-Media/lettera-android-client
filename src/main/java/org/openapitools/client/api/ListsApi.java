@@ -190,11 +190,13 @@ public class ListsApi {
   * 
    * @param start 
    * @param limit 
+   * @param from 
+   * @param to 
    * @param paper 
    * @param category 
    * @return Object
   */
-  public Object latestGet (Integer start, Integer limit, String paper, String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public Object latestGet (Integer start, Integer limit, String from, String to, String paper, String category) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -208,6 +210,8 @@ public class ListsApi {
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "from", from));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "to", to));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
     String[] contentTypes = {
@@ -252,9 +256,9 @@ public class ListsApi {
       /**
    * Returns a list of latest articles
    * 
-   * @param start    * @param limit    * @param paper    * @param category 
+   * @param start    * @param limit    * @param from    * @param to    * @param paper    * @param category 
   */
-  public void latestGet (Integer start, Integer limit, String paper, String category, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
+  public void latestGet (Integer start, Integer limit, String from, String to, String paper, String category, final Response.Listener<Object> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -270,6 +274,8 @@ public class ListsApi {
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "start", start));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "from", from));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "to", to));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "paper", paper));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "category", category));
 

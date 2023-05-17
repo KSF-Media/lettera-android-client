@@ -68,7 +68,7 @@ No authorization required
 
 ## latestGet
 
-> Object latestGet(start, limit, paper, category)
+> Object latestGet(start, limit, from, to, paper, category)
 
 Returns a list of latest articles
 
@@ -81,10 +81,12 @@ Returns a list of latest articles
 ListsApi apiInstance = new ListsApi();
 Integer start = null; // Integer | 
 Integer limit = null; // Integer | 
+String from = null; // String | 
+String to = null; // String | 
 String paper = null; // String | 
 String category = null; // String | 
 try {
-    Object result = apiInstance.latestGet(start, limit, paper, category);
+    Object result = apiInstance.latestGet(start, limit, from, to, paper, category);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ListsApi#latestGet");
@@ -99,6 +101,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **start** | **Integer**|  | [optional] [default to null]
  **limit** | **Integer**|  | [optional] [default to null]
+ **from** | **String**|  | [optional] [default to null]
+ **to** | **String**|  | [optional] [default to null]
  **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
  **category** | **String**|  | [optional] [default to null]
 
