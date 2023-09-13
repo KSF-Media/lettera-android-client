@@ -9,8 +9,6 @@ Method | HTTP request | Description
 [**mostreadGet**](ListsApi.md#mostreadGet) | **GET** /mostread | Returns a list of most read articles
 [**presetPresetCategoryGet**](ListsApi.md#presetPresetCategoryGet) | **GET** /preset/{preset}/{category} | Load a preset model
 [**presetPresetCategoryPost**](ListsApi.md#presetPresetCategoryPost) | **POST** /preset/{preset}/{category} | Update a preset model
-[**scoredPost**](ListsApi.md#scoredPost) | **POST** /scored | List recent articles sorted by given scoring weights
-[**scoredPresetGet**](ListsApi.md#scoredPresetGet) | **GET** /scored/{preset} | List recent articles sorted by preset scoring
 [**searchGet**](ListsApi.md#searchGet) | **GET** /search | Returns a list of search results
 [**tagTagGet**](ListsApi.md#tagTagGet) | **GET** /tag/{tag} | Returns a list of latest articles by tag
 
@@ -271,110 +269,6 @@ No authorization required
 
 - **Content-Type**: application/json;charset=utf-8
 - **Accept**: Not defined
-
-
-## scoredPost
-
-> List&lt;ArticleStub&gt; scoredPost(category, paper, body, start, limit)
-
-List recent articles sorted by given scoring weights
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.ListsApi;
-
-ListsApi apiInstance = new ListsApi();
-String category = null; // String | 
-String paper = null; // String | 
-Scoring body = new Scoring(); // Scoring | 
-Integer start = null; // Integer | 
-Integer limit = null; // Integer | 
-try {
-    List<ArticleStub> result = apiInstance.scoredPost(category, paper, body, start, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ListsApi#scoredPost");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category** | **String**|  | [default to null]
- **paper** | **String**|  | [default to null] [enum: HBL, ON, VN, HT, JUNIOR, FORUM, LS]
- **body** | [**Scoring**](Scoring.md)|  |
- **start** | **Integer**|  | [optional] [default to null]
- **limit** | **Integer**|  | [optional] [default to null]
-
-### Return type
-
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-
-## scoredPresetGet
-
-> List&lt;ArticleStub&gt; scoredPresetGet(preset, category, start, limit, paper)
-
-List recent articles sorted by preset scoring
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.ListsApi;
-
-ListsApi apiInstance = new ListsApi();
-Integer preset = null; // Integer | 
-String category = null; // String | 
-Integer start = null; // Integer | 
-Integer limit = null; // Integer | 
-String paper = null; // String | 
-try {
-    List<ArticleStub> result = apiInstance.scoredPresetGet(preset, category, start, limit, paper);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ListsApi#scoredPresetGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **preset** | **Integer**|  | [default to null]
- **category** | **String**|  | [default to null]
- **start** | **Integer**|  | [optional] [default to null]
- **limit** | **Integer**|  | [optional] [default to null]
- **paper** | **String**|  | [optional] [default to null] [enum: hbl, ht, vn, on]
-
-### Return type
-
-[**List&lt;ArticleStub&gt;**](ArticleStub.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
 
 
 ## searchGet
